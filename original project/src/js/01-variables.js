@@ -8,7 +8,7 @@ let infoPerson = {
   email: '',
   phone: '', //antes telephone
   linkedin: '', //antes linkedIn
-  github: '', //antes gitHub
+  github: '', //antes gitHubZ
 };
 
 //VARIABLES

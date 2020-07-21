@@ -1,3 +1,4 @@
+/* eslint-disable strict */
 // FUNCION PARA RELLENAR PREVIEW -- NAME
 function handleUpdateFullName() {
   infoPerson.name = fullName.value;
@@ -47,7 +48,6 @@ email.addEventListener('keyup', handleUpdateEmail);
 telephone.addEventListener('keyup', handleUpdateTelephone);
 linkedIn.addEventListener('keyup', handleUpdateLinkedIn);
 gitHub.addEventListener('keyup', handleUpdateGitHub);
-
 
 //CAMBIAR LOS COLORES CON LAS PALETAS
 function changeColors(event) {
