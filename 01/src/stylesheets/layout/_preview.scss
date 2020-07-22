@@ -1,0 +1,165 @@
+.preview {
+  height: 457px;
+  height: 100%;
+  padding: 38px 40px;
+  background-size: 54px;
+  background-color: $color-form-placeholder;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../../images/logo-cards/logo-kardMA-hand.svg);
+  background-repeat: repeat;
+
+  &__button {
+    height: 30px;
+    width: 75px;
+    font-family: $font-primary;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: $color-dark-medium;
+    border: 1px solid $color-light;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: $color-light;
+    box-shadow: 0 1px 10px 0 #000000;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      box-shadow: 0 4px 16px rgba(124, 163, 219, 0.5);
+    }
+    .fa-trash-alt {
+      margin-right: 5px;
+    }
+  }
+
+  &__main {
+    background-color: $color-light;
+    box-shadow: 0 1px 10px 0 $color-dark;
+    height: 329px;
+    border-radius: 2px;
+    width: 240px;
+    margin: auto;
+
+    &__name {
+      font-family: $font-secondary;
+      line-height: 20px;
+      padding: 21px 0 10px;
+
+      &__title {
+        border-left: 5px solid $color-primary-medium;
+        font-weight: $font-weight-bold;
+        font-size: 18px;
+        color: $color-primary-dark;
+        padding-left: 15px;
+      }
+      &__subtitle {
+        border-left: 5px solid $color-primary-medium;
+        font-weight: $font-weight-regular;
+        font-size: 16px;
+        color: $color-dark-medium;
+        padding-left: 15px;
+        padding-top: 4px;
+      }
+    }
+    &__photo {
+      height: 200px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../../images/default-image-flower-fill.svg);
+      background-position: center;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px 0 12px 20px;
+
+      &__item {
+        border: 2px solid $color-primary-light;
+        color: $color-primary-dark;
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+        padding: 5px 7px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &__tel {
+          padding: 6px;
+        }
+        &__email {
+          padding: 6px;
+        }
+        &__linkedin {
+          padding: 6px;
+        }
+        &__github {
+          padding: 6px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .preview {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    background-size: 54px;
+    padding: 180px 45px 267px;
+    border-radius: 6px;
+  }
+}
+
+// CLASSES TO CHANGE PALLETES
+
+.palette1-js {
+  .preview__main__name__title {
+    color: $color-primary-dark;
+    border-left: 5px solid $color-primary-medium;
+  }
+  .preview__main__name__subtitle {
+    border-left: 5px solid $color-primary-medium;
+  }
+  .preview__main__icons__item {
+    border: 2px solid $color-primary-light;
+    color: $color-primary-dark;
+  }
+}
+
+.palette2-js {
+  .preview__main__name__title {
+    color: $color-red-dark;
+    border-left: 5px solid $color-red-normal;
+  }
+  .preview__main__name__subtitle {
+    border-left: 5px solid $color-red-normal;
+  }
+  .preview__main__icons__item {
+    border: 2px solid $color-red-light;
+    color: $color-red-dark;
+  }
+}
+
+.palette3-js {
+  .preview__main__name__title {
+    color: $color-mix-dark;
+    border-left: 5px solid $color-mix-normal;
+  }
+  .preview__main__name__subtitle {
+    border-left: 5px solid $color-mix-normal;
+  }
+  .preview__main__icons__item {
+    border: 2px solid $color-mix-light;
+    color: $color-mix-dark;
+  }
+}

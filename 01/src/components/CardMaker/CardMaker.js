@@ -7,7 +7,7 @@ import Header from '../Header';
 class CardMaker extends React.Component {
   render() {
     console.log('funciona');
-    return <div>Ahora?</div>;
+    return    <Footer />;
   }
 }
 export default CardMaker;

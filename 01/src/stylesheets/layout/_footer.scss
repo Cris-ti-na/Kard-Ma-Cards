@@ -1,0 +1,43 @@
+@import "../core/variables";
+@import "../core/mixins";
+
+.footer {
+  border-top: 1px solid $color-medium-extralight;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .copy {
+    font-family: $font-primary;
+    font-size: 14px;
+    color: $color-medium-extralight;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+  .logo {
+    margin-bottom: 10px;
+    @include tablet {
+      margin-top: 10px;
+    }
+  }
+
+  .logo--image {
+    width: 103px;
+    height: 40px;
+  }
+}
