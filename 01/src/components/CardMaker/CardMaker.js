@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import Form from './Form/Form';
 import Preview from './Preview';
 import Footer from '../Footer';
 import Header from '../Header';
