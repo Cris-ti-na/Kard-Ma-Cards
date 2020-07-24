@@ -1,5 +1,5 @@
-import React from "react";
-import "../../stylesheets/layout/_form.scss";
+import React from 'react';
+import '../../stylesheets/layout/_form.scss';
 class Form extends React.Component {
   render() {
     return (
@@ -71,7 +71,8 @@ class Form extends React.Component {
               </div>
             </div>
             {/* --Fill open--> */}
-            <div className="form__open__fill hidden">
+            <div className="form__open__fill ">
+              {/* hidden */}
               <fieldset className="article__fill__form article__form__noborder">
                 <label for="fullName">Nombre completo</label>
                 <input
@@ -158,7 +159,8 @@ class Form extends React.Component {
               </div>
             </div>
             {/* --Share open--> */}
-            <div className="form__open__share hidden">
+            <div className="form__open__share ">
+              {/* hidden */}
               <div className="article__share__container">
                 <button className="article__share__button" disabled>
                   <i className="far fa-address-card"></i>CREAR TARJETA
