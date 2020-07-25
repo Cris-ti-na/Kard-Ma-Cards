@@ -24,7 +24,7 @@ class Share extends React.Component {
           <div className="article__share__create hidden">
             <h3 className="article__share_copy">La tarjeta ha sido creada:</h3>
             <p className="response link_card"></p>
-            <a className="article__twitter__button">
+            <a className="article__twitter__button" href="/">
               <div className="child">
                 <i className="fab fa-twitter"></i> Compartir en Twitter
               </div>

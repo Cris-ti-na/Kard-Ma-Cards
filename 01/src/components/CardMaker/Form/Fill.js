@@ -1,7 +1,22 @@
 import React from 'react';
 
 class Fill extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleText = this.handleText.bind(this);
+  }
+
+  handleText(ev) {
+    const inputValue = ev.currentTarget.value;
+    const inputId = ev.currentTarget.id;
+    // console.log('event.currentTarget.value;', event.target.value);
+    // console.log('event.currentTarget.id;', event.target.id);
+
+    console.log('handleText de fill está ejecutandose');
+    this.props.getInformation(inputId, inputValue);
+  }
   render() {
+    console.log('props en el render del nieto', this.props); //Compruebo que recibe funcion del padre
     return (
       <article className="article__fill">
         {/* --Fill close--> */}
@@ -18,9 +33,23 @@ class Fill extends React.Component {
           {/* hidden */}
           <fieldset className="article__fill__form article__form__noborder">
             <label for="fullName">Nombre completo</label>
-            <input className="fullName-js" id="fullName" type="text" placeholder="Introduce tu nombre" required />
+            <input
+              className="fullName-js"
+              id="fullName"
+              type="text"
+              placeholder="Introduce tu nombre"
+              onKeyUp={this.handleText}
+              required
+            />
             <label for="position">Puesto</label>
-            <input className="job-js" id="position" type="text" placeholder="Front-End Developer" required />
+            <input
+              className="job-js"
+              id="position"
+              type="text"
+              placeholder="Front-End Developer"
+              onKeyUp={this.handleText}
+              required
+            />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
@@ -30,7 +59,10 @@ class Fill extends React.Component {
                   id="img-selector"
                   className="action__hiddenField js__profile-upload-btn article__fill__button addImage-js"
                 />
-                <button className="action__upload-btn js__profile-trigger article__fill__addImg" type="button">
+                <button
+                  className="action__upload-btn js__profile-trigger article__fill__addImg"
+                  type="button"
+                >
                   Añadir Imagen
                 </button>
                 <div className="profile__preview js__profile-preview article__fill__rectangle">
@@ -46,13 +78,36 @@ class Fill extends React.Component {
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="karmacards@makeapp.com"
               required
+              onKeyUp={this.handleText}
             />
             <label for="phone">Teléfono</label>
-            <input className="telephone-js" id="phone" type="text" pattern="[0-9]{9}" placeholder="656 656 656" required />
+            <input
+              className="telephone-js"
+              id="phone"
+              type="text"
+              pattern="[0-9]{9}"
+              placeholder="656 656 656"
+              required
+              onKeyUp={this.handleText}
+            />
             <label for="linkedin">Linkedin</label>
-            <input className="linkedIn-js" id="linkedin" type="text" placeholder="linkedin.com/in/front-end-developer/" required />
+            <input
+              className="linkedIn-js"
+              id="linkedin"
+              type="text"
+              placeholder="linkedin.com/in/front-end-developer/"
+              required
+              onKeyUp={this.handleText}
+            />
             <label for="github">Github</label>
-            <input className="gitHub-js" id="github" type="text" placeholder="https://github.com/adalab" required />
+            <input
+              className="gitHub-js"
+              id="github"
+              type="text"
+              placeholder="https://github.com/adalab"
+              required
+              onKeyUp={this.handleText}
+            />
           </fieldset>
         </div>
       </article>

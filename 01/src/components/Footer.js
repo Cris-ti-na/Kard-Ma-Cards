@@ -1,13 +1,22 @@
-import React from "react";
-import "../stylesheets/layout/_footer.scss";
-import Logo from "../images/logo-adalab.png";
+import React from 'react';
+import '../stylesheets/layout/_footer.scss';
+import Logo from '../images/logo-adalab.png';
 
 class Footer extends React.Component {
   render() {
     return (
       <footer className="footer">
         <div className="wrapper">
-          <span className="copy">Kardma Profile-Cards 🌸🧘🏻‍♀️ @2020</span>
+          <span className="copy">
+            Kardma Profile-Cards
+            <span role="img" aria-label="emoji">
+              🌸
+            </span>
+            <span role="img" aria-label="emoji">
+              🧘🏻‍♀️
+            </span>{' '}
+            @2020
+          </span>
           <div className="logo">
             <a
               href="https://adalab.es/"

@@ -1,5 +1,5 @@
-import React from "react";
-import "../../stylesheets/layout/_preview.scss";
+import React from 'react';
+import '../../stylesheets/layout/_preview.scss';
 
 class Preview extends React.Component {
   render() {
@@ -29,6 +29,7 @@ class Preview extends React.Component {
                       className="preview__main__icons__item__tel previewTelephone-js"
                       href="tel:"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fas fa-mobile-alt"></i>
                     </a>
@@ -40,6 +41,7 @@ class Preview extends React.Component {
                       className="preview__main__icons__item__email previewEmail-js"
                       href="mailto:"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="far fa-envelope"></i>
                     </a>
@@ -49,7 +51,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder3-js">
                     <a
                       className="preview__main__icons__item__linkedin previewLinkedIn-js"
-                      href=""
+                      href="/"
                       target="_blank"
                     >
                       <i className="fab fa-linkedin-in"></i>
@@ -60,7 +62,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder4-js">
                     <a
                       className="preview__main__icons__item__github previewGitHub-js"
-                      href=""
+                      href="/"
                       target="_blank"
                     >
                       <i className="fab fa-github-alt"></i>

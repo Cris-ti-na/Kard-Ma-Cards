@@ -17,16 +17,47 @@ class CardMaker extends React.Component {
       linkedin: '', //antes linkedIn
       github: '', //antes gitHubZ
     };
+    this.parentFunction = this.parentFunction.bind(this);
   }
+
+  parentFunction(inputId, inputValue) {
+    // console.log(inputId, inputValue);
+    if (inputId === 'fullName') {
+      this.setState({
+        name: inputValue,
+      });
+    } else if (inputId === 'position') {
+      this.setState({
+        job: inputValue,
+      });
+    } else if (inputId === 'email') {
+      this.setState({
+        email: inputValue,
+      });
+    } else if (inputId === 'phone') {
+      this.setState({
+        phone: inputValue,
+      });
+    } else if (inputId === 'linkedin') {
+      this.setState({
+        linkedin: inputValue,
+      });
+    } else if (inputId === 'github') {
+      this.setState({
+        github: inputValue,
+      });
+    }
+    console.log('Asi queda el state con los datos guardados: ', this.state);
+  }
+
   render() {
-    console.log('funciona');
     return (
       <div>
         <Header />
         {
           <main className="main__grid">
             <Preview />
-            <Form />
+            <Form getInformation={this.parentFunction} />
           </main>
         }
         <Footer />
