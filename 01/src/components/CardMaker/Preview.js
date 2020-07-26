@@ -3,6 +3,7 @@ import '../../stylesheets/layout/_preview.scss';
 
 class Preview extends React.Component {
   render() {
+    console.log(this.props.userInfo.name);
     return (
       <section className="preview">
         <div className="wrapper">
@@ -13,12 +14,8 @@ class Preview extends React.Component {
           </fieldset>
           <article className="preview__main">
             <div className="preview__main__name">
-              <h2 className="preview__main__name__title previewFullName-js">
-                {this.props.name}
-              </h2>
-              <h3 className="preview__main__name__subtitle previewJob-js">
-                Front-End Developer
-              </h3>
+              <h2 className="preview__main__name__title previewFullName-js">{this.props.userInfo.name}</h2>
+              <h3 className="preview__main__name__subtitle previewJob-js">{this.props.userInfo.job}</h3>
             </div>
             <div className="preview__main__photo js__profile-preview"></div>
             <nav>
@@ -27,7 +24,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder1-js">
                     <a
                       className="preview__main__icons__item__tel previewTelephone-js"
-                      href="tel:"
+                      href={'tel:' + this.props.userInfo.phone}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -39,7 +36,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder2-js">
                     <a
                       className="preview__main__icons__item__email previewEmail-js"
-                      href="mailto:"
+                      href={'mailto:' + this.props.userInfo.email}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -51,7 +48,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder3-js">
                     <a
                       className="preview__main__icons__item__linkedin previewLinkedIn-js"
-                      href="/"
+                      href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
                       target="_blank"
                     >
                       <i className="fab fa-linkedin-in"></i>
@@ -62,7 +59,7 @@ class Preview extends React.Component {
                   <div className="preview__main__icons__item previewIconBorder4-js">
                     <a
                       className="preview__main__icons__item__github previewGitHub-js"
-                      href="/"
+                      href={'https://github.com/' + this.props.userInfo.github}
                       target="_blank"
                     >
                       <i className="fab fa-github-alt"></i>
@@ -77,6 +74,6 @@ class Preview extends React.Component {
     );
   }
 }
+// Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
 
-Preview.defaultProps = { name: 'Sonia' };
 export default Preview;

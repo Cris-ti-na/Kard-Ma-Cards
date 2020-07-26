@@ -32,19 +32,14 @@ class Fill extends React.Component {
         <div className="form__open__fill ">
           {/* hidden */}
           <fieldset className="article__fill__form article__form__noborder">
-            <label htmlFor="fullName">{this.props.name}</label>
+            <label htmlFor="fullName">Nombre</label>
             <input className="fullName-js" id="name" type="text" placeholder="Introduce tu nombre" onChange={this.handleText} required />
             <label htmlFor="position">Puesto</label>
             <input className="job-js" id="job" type="text" placeholder="Front-End Developer" onChange={this.handleText} required />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
-                <input
-                  type="file"
-                  name=""
-                  id="img-selector"
-                  className="action__hiddenField js__profile-upload-btn article__fill__button addImage-js"
-                />
+                <input type="file" name="" id="photo" className="action__hiddenField js__profile-upload-btn article__fill__button addImage-js" />
                 <button className="action__upload-btn js__profile-trigger article__fill__addImg" type="button">
                   Añadir Imagen
                 </button>

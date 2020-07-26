@@ -21,42 +21,18 @@ class CardMaker extends React.Component {
     };
     this.parentFunction = this.parentFunction.bind(this);
   }
+  //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   parentFunction(inputId, inputValue) {
-    this.setState((inputId, prevState) => {
+    this.setState((prevState) => {
       return {
         userInfo: {
           ...prevState.userInfo,
-          inputId: inputValue,
+          [inputId]: inputValue,
         },
       };
     });
   }
-  // console.log(inputId, inputValue);
-  // if (inputId === 'fullName') {
-  //   this.setState({
-  //     name: inputValue,
-  //   });
-  // } else if (inputId === 'position') {
-  //   this.setState({
-  //     job: inputValue,
-  //   });
-  // } else if (inputId === 'email') {
-  //   this.setState({
-  //     email: inputValue,
-  //   });
-  // } else if (inputId === 'phone') {
-  //   this.setState({
-  //     phone: inputValue,
-  //   });
-  // } else if (inputId === 'linkedin') {
-  //   this.setState({
-  //     linkedin: inputValue,
-  //   });
-  // } else if (inputId === 'github') {
-  //   this.setState({
-  //     github: inputValue,
-  //   });
-  // }
+
   render() {
     console.log(this.state);
     return (
@@ -64,7 +40,7 @@ class CardMaker extends React.Component {
         <Header />
         {
           <main className="main__grid">
-            <Preview />
+            <Preview userInfo={this.state.userInfo} />
             <Form getInformation={this.parentFunction} />
           </main>
         }
