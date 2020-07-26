@@ -14,7 +14,7 @@ class Preview extends React.Component {
           <article className="preview__main">
             <div className="preview__main__name">
               <h2 className="preview__main__name__title previewFullName-js">
-                Nombre Apellido
+                {this.props.name}
               </h2>
               <h3 className="preview__main__name__subtitle previewJob-js">
                 Front-End Developer
@@ -77,4 +77,6 @@ class Preview extends React.Component {
     );
   }
 }
+
+Preview.defaultProps = { name: 'Sonia' };
 export default Preview;

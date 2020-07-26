@@ -8,48 +8,55 @@ class CardMaker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '', //antes colorSelected
-      name: '',
-      job: '',
-      photo: '',
-      email: '',
-      phone: '', //antes telephone
-      linkedin: '', //antes linkedIn
-      github: '', //antes gitHubZ
+      userInfo: {
+        palette: '', //antes colorSelected
+        name: '',
+        job: '',
+        photo: '',
+        email: '',
+        phone: '', //antes telephone
+        linkedin: '', //antes linkedIn
+        github: '', //antes gitHubZ}
+      },
     };
     this.parentFunction = this.parentFunction.bind(this);
   }
-
   parentFunction(inputId, inputValue) {
-    // console.log(inputId, inputValue);
-    if (inputId === 'fullName') {
-      this.setState({
-        name: inputValue,
-      });
-    } else if (inputId === 'position') {
-      this.setState({
-        job: inputValue,
-      });
-    } else if (inputId === 'email') {
-      this.setState({
-        email: inputValue,
-      });
-    } else if (inputId === 'phone') {
-      this.setState({
-        phone: inputValue,
-      });
-    } else if (inputId === 'linkedin') {
-      this.setState({
-        linkedin: inputValue,
-      });
-    } else if (inputId === 'github') {
-      this.setState({
-        github: inputValue,
-      });
-    }
-    console.log('Asi queda el state con los datos guardados: ', this.state);
+    this.setState((prevState) => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          name: inputValue,
+        },
+      };
+    });
   }
-
+  // console.log(inputId, inputValue);
+  // if (inputId === 'fullName') {
+  //   this.setState({
+  //     name: inputValue,
+  //   });
+  // } else if (inputId === 'position') {
+  //   this.setState({
+  //     job: inputValue,
+  //   });
+  // } else if (inputId === 'email') {
+  //   this.setState({
+  //     email: inputValue,
+  //   });
+  // } else if (inputId === 'phone') {
+  //   this.setState({
+  //     phone: inputValue,
+  //   });
+  // } else if (inputId === 'linkedin') {
+  //   this.setState({
+  //     linkedin: inputValue,
+  //   });
+  // } else if (inputId === 'github') {
+  //   this.setState({
+  //     github: inputValue,
+  //   });
+  // }
   render() {
     return (
       <div>

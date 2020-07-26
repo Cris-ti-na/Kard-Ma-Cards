@@ -32,13 +32,13 @@ class Fill extends React.Component {
         <div className="form__open__fill ">
           {/* hidden */}
           <fieldset className="article__fill__form article__form__noborder">
-            <label for="fullName">Nombre completo</label>
+            <label for="fullName">{this.props.name}</label>
             <input
               className="fullName-js"
               id="fullName"
               type="text"
               placeholder="Introduce tu nombre"
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
               required
             />
             <label for="position">Puesto</label>
@@ -47,7 +47,7 @@ class Fill extends React.Component {
               id="position"
               type="text"
               placeholder="Front-End Developer"
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
               required
             />
             <div className="article__fill__addimg">
@@ -78,7 +78,7 @@ class Fill extends React.Component {
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="karmacards@makeapp.com"
               required
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
             />
             <label for="phone">Teléfono</label>
             <input
@@ -88,7 +88,7 @@ class Fill extends React.Component {
               pattern="[0-9]{9}"
               placeholder="656 656 656"
               required
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
             />
             <label for="linkedin">Linkedin</label>
             <input
@@ -97,7 +97,7 @@ class Fill extends React.Component {
               type="text"
               placeholder="linkedin.com/in/front-end-developer/"
               required
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
             />
             <label for="github">Github</label>
             <input
@@ -106,7 +106,7 @@ class Fill extends React.Component {
               type="text"
               placeholder="https://github.com/adalab"
               required
-              onKeyUp={this.handleText}
+              onChange={this.handleText}
             />
           </fieldset>
         </div>
