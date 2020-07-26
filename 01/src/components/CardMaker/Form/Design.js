@@ -19,7 +19,7 @@ class Design extends React.Component {
             <h3 className="article__custom__subtitdesign">COLORES</h3>
             <fieldset className="article__custom__colors article__form__noborder">
               <div className="article__custom__cgreen">
-                <input className="palette-js" type="radio" value="1" name="select-color" checked />
+                <input className="palette-js" type="radio" value="1" name="select-color" defaultChecked />
                 <div className="article__custom__cgreen1"></div>
                 <div className="article__custom__cgreen2"></div>
                 <div className="article__custom__cgreen3"></div>

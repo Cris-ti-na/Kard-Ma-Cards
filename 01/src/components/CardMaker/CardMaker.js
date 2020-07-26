@@ -22,11 +22,11 @@ class CardMaker extends React.Component {
     this.parentFunction = this.parentFunction.bind(this);
   }
   parentFunction(inputId, inputValue) {
-    this.setState((prevState) => {
+    this.setState((inputId, prevState) => {
       return {
         userInfo: {
           ...prevState.userInfo,
-          name: inputValue,
+          inputId: inputValue,
         },
       };
     });
@@ -58,6 +58,7 @@ class CardMaker extends React.Component {
   //   });
   // }
   render() {
+    console.log(this.state);
     return (
       <div>
         <Header />

@@ -32,24 +32,10 @@ class Fill extends React.Component {
         <div className="form__open__fill ">
           {/* hidden */}
           <fieldset className="article__fill__form article__form__noborder">
-            <label for="fullName">{this.props.name}</label>
-            <input
-              className="fullName-js"
-              id="fullName"
-              type="text"
-              placeholder="Introduce tu nombre"
-              onChange={this.handleText}
-              required
-            />
-            <label for="position">Puesto</label>
-            <input
-              className="job-js"
-              id="position"
-              type="text"
-              placeholder="Front-End Developer"
-              onChange={this.handleText}
-              required
-            />
+            <label htmlFor="fullName">{this.props.name}</label>
+            <input className="fullName-js" id="name" type="text" placeholder="Introduce tu nombre" onChange={this.handleText} required />
+            <label htmlFor="position">Puesto</label>
+            <input className="job-js" id="job" type="text" placeholder="Front-End Developer" onChange={this.handleText} required />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
@@ -59,10 +45,7 @@ class Fill extends React.Component {
                   id="img-selector"
                   className="action__hiddenField js__profile-upload-btn article__fill__button addImage-js"
                 />
-                <button
-                  className="action__upload-btn js__profile-trigger article__fill__addImg"
-                  type="button"
-                >
+                <button className="action__upload-btn js__profile-trigger article__fill__addImg" type="button">
                   Añadir Imagen
                 </button>
                 <div className="profile__preview js__profile-preview article__fill__rectangle">
@@ -70,7 +53,7 @@ class Fill extends React.Component {
                 </div>
               </div>
             </div>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               className="email-js"
               id="email"
@@ -80,17 +63,9 @@ class Fill extends React.Component {
               required
               onChange={this.handleText}
             />
-            <label for="phone">Teléfono</label>
-            <input
-              className="telephone-js"
-              id="phone"
-              type="text"
-              pattern="[0-9]{9}"
-              placeholder="656 656 656"
-              required
-              onChange={this.handleText}
-            />
-            <label for="linkedin">Linkedin</label>
+            <label htmlFor="phone">Teléfono</label>
+            <input className="telephone-js" id="phone" type="text" pattern="[0-9]{9}" placeholder="656 656 656" required onChange={this.handleText} />
+            <label htmlFor="linkedin">Linkedin</label>
             <input
               className="linkedIn-js"
               id="linkedin"
@@ -99,15 +74,8 @@ class Fill extends React.Component {
               required
               onChange={this.handleText}
             />
-            <label for="github">Github</label>
-            <input
-              className="gitHub-js"
-              id="github"
-              type="text"
-              placeholder="https://github.com/adalab"
-              required
-              onChange={this.handleText}
-            />
+            <label htmlFor="github">Github</label>
+            <input className="gitHub-js" id="github" type="text" placeholder="https://github.com/adalab" required onChange={this.handleText} />
           </fieldset>
         </div>
       </article>
