@@ -1,9 +1,13 @@
 import React from 'react';
+import Main from '../Main';
 import Footer from '../Footer';
 
 class Landing extends React.Component {
   render() {
-    return console.log('prueba');
+    <div>
+      <Main />
+      <Footer />
+    </div>;
   }
 }
 export default Landing;
