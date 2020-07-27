@@ -27,13 +27,14 @@ class Fill extends React.Component {
     return (
       <article className="article__fill">
         {/* --Fill close--> */}
-        <div className="form__closed__fill">
+        <div className="form__closed__fill" onClick={this.displayPanel}>
           <h2 className="article__fill__title">
             <i className="far fa-keyboard"></i> RELLENA
           </h2>
-          <div className={`form__arrow--fill closed ${this.props.activePanel === this.props.id ? "active" : "hidden"}`}
-          onClick={this.displayPanel}>
-            <button className="fas fa-chevron-down arrow-js"></button>
+          <div className="form__arrow--fill closed">
+          <div className="form__arrow--design collapse-item">
+            <i className="arrow-js fas fa-chevron-down"></i>
+          </div>
           </div>
         </div>
         {/* --Fill open--> */}
