@@ -19,10 +19,12 @@ class CardMaker extends React.Component {
         github: '', //antes gitHubZ}
       },
     };
-    this.parentFunction = this.parentFunction.bind(this);
+    this.handleInfo = this.handleInfo.bind(this);
+    //this.handleColor = this.handleColor.bind(this);
+
   }
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
-  parentFunction(inputId, inputValue) {
+  handleInfo(inputId, inputValue) {
     this.setState((prevState) => {
       return {
         userInfo: {
@@ -41,7 +43,7 @@ class CardMaker extends React.Component {
         {
           <main className="main__grid">
             <Preview userInfo={this.state.userInfo} />
-            <Form getInformation={this.parentFunction} />
+            <Form getInformation={this.handleInfo} />
           </main>
         }
         <Footer />

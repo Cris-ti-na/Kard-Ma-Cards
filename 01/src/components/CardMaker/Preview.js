@@ -3,7 +3,7 @@ import '../../stylesheets/layout/_preview.scss';
 
 class Preview extends React.Component {
   render() {
-    console.log(this.props.userInfo.name);
+    console.log(this.props);
     return (
       <section className="preview">
         <div className="wrapper">
@@ -49,7 +49,7 @@ class Preview extends React.Component {
                     <a
                       className="preview__main__icons__item__linkedin previewLinkedIn-js"
                       href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer"
                     >
                       <i className="fab fa-linkedin-in"></i>
                     </a>
@@ -60,7 +60,7 @@ class Preview extends React.Component {
                     <a
                       className="preview__main__icons__item__github previewGitHub-js"
                       href={'https://github.com/' + this.props.userInfo.github}
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer"
                     >
                       <i className="fab fa-github-alt"></i>
                     </a>
@@ -74,6 +74,6 @@ class Preview extends React.Component {
     );
   }
 }
-// Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
+//Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
 
 export default Preview;
