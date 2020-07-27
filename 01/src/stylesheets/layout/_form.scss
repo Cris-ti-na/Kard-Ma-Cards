@@ -43,7 +43,6 @@
     .form__arrow--design {
       .fa-chevron-down {
         margin-top: 27px;
-        transform: rotate(180deg);
       }
     }
   }
@@ -159,7 +158,6 @@
     .form__arrow--fill {
       .fa-chevron-down {
         margin-top: 27px;
-        transform: rotate(180deg);
       }
     }
   }
@@ -262,7 +260,6 @@
     .form__arrow--share {
       .fa-chevron-down {
         margin-top: 27px;
-        transform: rotate(180deg);
       }
     }
   }
@@ -298,7 +295,7 @@
       font-size: 16px;
       padding-top: 20px;
     }
-    .link_card{
+    .link_card {
       font-size: 12px;
       color: $color-secondary-dark;
       margin-top: 8px;
@@ -306,7 +303,7 @@
     .article__twitter__button {
       display: flex;
       justify-content: center;
-      .child{
+      .child {
         background-color: #00a0f5;
         border: 1px solid #00a0f5;
         border-radius: 3px;
@@ -377,8 +374,10 @@
   margin-left: 15px;
 }
 
-
 .active {
-  display: block
+  display: block;
+  .arrow-js {
+    transform: rotate(180deg);
+    color: $color-red-light;
+  }
 }
-

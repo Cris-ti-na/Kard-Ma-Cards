@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Share extends React.Component {
   constructor(props) {
@@ -14,7 +14,11 @@ class Share extends React.Component {
     return (
       <article className="article__share">
         {/* --Share close--> */}
-        <div className="form__closed__share">
+        <div
+          className="form__closed__share"
+          id={this.props.id}
+          onClick={this.displayPanel}
+        >
           <h2 className="article__share__title">
             <i className="fas fa-share-alt"></i> COMPARTE
           </h2>
@@ -23,10 +27,12 @@ class Share extends React.Component {
           </div>
         </div>
         {/* --Share open--> */}
-        <div className="form__open__share "
-        className={`fill hidden ${this.props.activePanel === this.props.id ? "active" : "hidden"}`}
-        id={this.props.id}
-        onClick={this.displayPanel}>
+        <div
+          className="form__open__share "
+          className={`fill ${
+            this.props.activePanel === this.props.id ? "active" : "hidden"
+          }`}
+        >
           <div className="article__share__container">
             <button className="article__share__button" disabled>
               <i className="far fa-address-card"></i>CREAR TARJETA
