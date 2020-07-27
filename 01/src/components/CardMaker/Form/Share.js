@@ -18,8 +18,8 @@ class Share extends React.Component {
           <h2 className="article__share__title">
             <i className="fas fa-share-alt"></i> COMPARTE
           </h2>
-          <div className={`form__arrow--share ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}>
-            <i className="fas fa-chevron-down arrow-js"></i>
+          <div className="form__arrow--share">
+            <i className={`fas fa-chevron-down arrow-js ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
         {/* --Share open--> */}

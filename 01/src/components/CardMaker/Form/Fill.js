@@ -32,9 +32,9 @@ class Fill extends React.Component {
           <h2 className="article__fill__title">
             <i className="far fa-keyboard"></i> RELLENA
           </h2>
-          <div className={`form__arrow--fill ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}>
+          <div className="form__arrow--fill">
             <div className="form__arrow--design collapse-item">
-              <i className="arrow-js fas fa-chevron-down"></i>
+              <i className={`arrow-js fas fa-chevron-down ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
             </div>
           </div>
         </div>

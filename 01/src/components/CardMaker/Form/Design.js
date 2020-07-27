@@ -25,8 +25,8 @@ class Design extends React.Component {
           <h2 className="article__custom__titledesign">
             <i className="far fa-object-ungroup"></i>DISEÑA
           </h2>
-          <div className={`form__arrow--design ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}>
-            <i className="arrow-js fas fa-chevron-down"></i>
+          <div className="form__arrow--design">
+            <i className={`arrow-js fas fa-chevron-down  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
 
