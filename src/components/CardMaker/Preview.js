@@ -14,8 +14,8 @@ class Preview extends React.Component {
           </fieldset>
           <article className="preview__main">
             <div className="preview__main__name">
-              <h2 className="preview__main__name__title previewFullName-js">{this.props.userInfo.name}</h2>
-              <h3 className="preview__main__name__subtitle previewJob-js">{this.props.userInfo.job}</h3>
+              <h2 className="preview__main__name__title previewFullName-js">{this.props.userInfo.name || 'Nombre Apellido'}</h2>
+              <h3 className="preview__main__name__subtitle previewJob-js">{this.props.userInfo.job || 'Front-End Developer'}</h3>
             </div>
             <div className="preview__main__photo js__profile-preview"></div>
             <nav>
@@ -49,7 +49,8 @@ class Preview extends React.Component {
                     <a
                       className="preview__main__icons__item__linkedin previewLinkedIn-js"
                       href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-linkedin-in"></i>
                     </a>
@@ -60,7 +61,8 @@ class Preview extends React.Component {
                     <a
                       className="preview__main__icons__item__github previewGitHub-js"
                       href={'https://github.com/' + this.props.userInfo.github}
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <i className="fab fa-github-alt"></i>
                     </a>
@@ -74,6 +76,6 @@ class Preview extends React.Component {
     );
   }
 }
-//Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
+Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
 
 export default Preview;
