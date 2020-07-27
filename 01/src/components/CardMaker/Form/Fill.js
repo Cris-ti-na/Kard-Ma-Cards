@@ -4,6 +4,7 @@ class Fill extends React.Component {
   constructor(props) {
     super(props);
     this.handleText = this.handleText.bind(this);
+    this.displayPanel = this.displayPanel.bind(this);
   }
 
   handleText(ev) {
@@ -15,6 +16,12 @@ class Fill extends React.Component {
     console.log('handleText de fill está ejecutandose');
     this.props.getInformation(inputId, inputValue);
   }
+
+  displayPanel(ev) {
+    ev.preventDefault();
+    this.props.handleCollapse(ev.currentTarget.id);
+  }
+
   render() {
     console.log('props en el render del nieto', this.props); //Compruebo que recibe funcion del padre
     return (
@@ -24,13 +31,14 @@ class Fill extends React.Component {
           <h2 className="article__fill__title">
             <i className="far fa-keyboard"></i> RELLENA
           </h2>
-          <div className="form__arrow--fill closed">
-            <i className="fas fa-chevron-down arrow-js"></i>
+          <div className={`form__arrow--fill closed ${this.props.activePanel === this.props.id ? "active" : "hidden"}`}
+          onClick={this.displayPanel}>
+            <button className="fas fa-chevron-down arrow-js"></button>
           </div>
         </div>
         {/* --Fill open--> */}
-        <div className="form__open__fill ">
-          {/* hidden */}
+        <div className={`form__open__fill hidden ${this.props.activePanel === this.props.id ? "active" : ""}`}
+          id={this.props.id}>
           <fieldset className="article__fill__form article__form__noborder">
             <label htmlFor="fullName">Nombre</label>
             <input className="fullName-js" id="name" type="text" placeholder="Introduce tu nombre" onChange={this.handleText} required />

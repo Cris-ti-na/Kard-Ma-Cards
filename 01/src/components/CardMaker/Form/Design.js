@@ -4,6 +4,8 @@ class Design extends React.Component {
   constructor(props) {
     super(props);
     this.handleColor = this.handleColor.bind(this);
+    this.displayPanel = this.displayPanel.bind(this);
+
   }
   handleColor(ev) {
     const inputValue = ev.currentTarget.value;
@@ -12,20 +14,26 @@ class Design extends React.Component {
     console.log(inputId, inputValue);
   }
 
+  displayPanel(ev) {
+    ev.preventDefault();
+    this.props.handleCollapse(ev.currentTarget.id);
+  }
+
   render() {
     return (
       <article className="article__custom__artdesign" id="diseña">
         {/* --Design close--> */}
-        <div className="form__closed__design">
+        <div className="form__closed__design" onClick={this.displayPanel}>
           <h2 className="article__custom__titledesign">
             <i className="far fa-object-ungroup"></i>DISEÑA
           </h2>
-          <div className="form__arrow--design">
+          <div className="form__arrow--design collapse-item">
             <i className="arrow-js fas fa-chevron-down"></i>
           </div>
         </div>
         {/* --Design open--> */}
-        <div className="form__open__design">
+        <div className={`form__open__design ${this.props.activePanel === this.props.id ? "active" : "hidden"}`}
+          id={this.props.id}>
           <div className="article__custom__ccolor">
             <h3 className="article__custom__subtitdesign">COLORES</h3>
             <fieldset className="article__custom__colors article__form__noborder">

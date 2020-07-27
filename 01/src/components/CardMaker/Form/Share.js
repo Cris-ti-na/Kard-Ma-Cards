@@ -1,6 +1,15 @@
 import React from 'react';
 
 class Share extends React.Component {
+  constructor(props) {
+    super(props);
+    this.displayPanel = this.displayPanel.bind(this);
+  }
+
+  displayPanel(ev) {
+    ev.preventDefault();
+    this.props.handleCollapse(ev.currentTarget.id);
+  }
   render() {
     return (
       <article className="article__share">
@@ -14,8 +23,10 @@ class Share extends React.Component {
           </div>
         </div>
         {/* --Share open--> */}
-        <div className="form__open__share ">
-          {/* hidden */}
+        <div className="form__open__share "
+        className={`fill hidden ${this.props.activePanel === this.props.id ? "active" : "hidden"}`}
+        id={this.props.id}
+        onClick={this.displayPanel}>
           <div className="article__share__container">
             <button className="article__share__button" disabled>
               <i className="far fa-address-card"></i>CREAR TARJETA

@@ -10,9 +10,17 @@ class Form extends React.Component {
     return (
       <section className="section__custom wrapper__custom">
         <form action="" className="miForm">
-          <Design getInformation={this.props.getInformation} />
-          <Fill getInformation={this.props.getInformation} />
-          <Share />
+          <Design getInformation={this.props.getInformation} 
+                  handleCollapse = {this.props.handleCollapse}
+                  activePanel = {this.props.activePanel}
+                  id = 'collapse-1'/>
+          <Fill getInformation={this.props.getInformation} 
+                  handleCollapse = {this.props.handleCollapse}
+                  activePanel = {this.props.activePanel}
+                  id = 'collapse-2'/>
+          <Share handleCollapse = {this.props.handleCollapse}
+                  activePanel = {this.props.activePanel}
+                  id = 'collapse-3'/>
         </form>
       </section>
     );

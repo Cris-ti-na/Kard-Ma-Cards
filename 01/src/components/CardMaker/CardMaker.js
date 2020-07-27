@@ -18,10 +18,10 @@ class CardMaker extends React.Component {
         linkedin: '', //antes linkedIn
         github: '', //antes gitHubZ}
       },
+      activePanel: 'collapse-1'
     };
     this.handleInfo = this.handleInfo.bind(this);
-    //this.handleColor = this.handleColor.bind(this);
-
+    this.handleCollapse = this.handleCollapse.bind(this);
   }
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
@@ -35,17 +35,27 @@ class CardMaker extends React.Component {
     });
   }
 
+  handleCollapse(targetId) {
+    //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
+    //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
+    if(targetId !== this.state.activePanel){
+      this.setState({activePanel: targetId})
+    // } else {
+    //   this.setState({activePanel: ''})
+    }
+  }
+
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <div>
         <Header />
-        {
           <main className="main__grid">
             <Preview userInfo={this.state.userInfo} />
-            <Form getInformation={this.handleInfo} />
+            <Form getInformation={this.handleInfo}
+            activePanel={this.state.activePanel}
+            handleCollapse={this.handleCollapse}/>
           </main>
-        }
         <Footer />
       </div>
     );
