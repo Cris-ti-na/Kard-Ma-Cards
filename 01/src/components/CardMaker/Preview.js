@@ -5,7 +5,7 @@ class Preview extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <section className="preview">
+      <section className={`preview palette${this.props.userInfo.palette}-js`}>
         <div className="wrapper">
           <fieldset className="article__form__noborder">
             <button type="reset" className="preview__button reset__button-js">
