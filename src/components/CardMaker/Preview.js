@@ -23,7 +23,9 @@ class Preview extends React.Component {
                 <li className="li-ssmm">
                   <div className="preview__main__icons__item previewIconBorder1-js">
                     <a
-                      className="preview__main__icons__item__tel previewTelephone-js"
+                      className={`preview__main__icons__item__tel previewTelephone-js ${
+                        this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'
+                      }`}
                       href={'tel:' + this.props.userInfo.phone}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -35,7 +37,9 @@ class Preview extends React.Component {
                 <li className="li-ssmm">
                   <div className="preview__main__icons__item previewIconBorder2-js">
                     <a
-                      className="preview__main__icons__item__email previewEmail-js"
+                      className={`preview__main__icons__item__email previewEmail-js ${
+                        this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'
+                      }`}
                       href={'mailto:' + this.props.userInfo.email}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -47,7 +51,9 @@ class Preview extends React.Component {
                 <li className="li-ssmm">
                   <div className="preview__main__icons__item previewIconBorder3-js">
                     <a
-                      className="preview__main__icons__item__linkedin previewLinkedIn-js"
+                      className={`preview__main__icons__item__linkedin previewLinkedIn-js ${
+                        this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'
+                      }`}
                       href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -59,7 +65,9 @@ class Preview extends React.Component {
                 <li className="li-ssmm">
                   <div className="preview__main__icons__item previewIconBorder4-js">
                     <a
-                      className="preview__main__icons__item__github previewGitHub-js"
+                      className={`preview__main__icons__item__github previewGitHub-js ${
+                        this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'
+                      }`}
                       href={'https://github.com/' + this.props.userInfo.github}
                       target="_blank"
                       rel="noopener noreferrer"
