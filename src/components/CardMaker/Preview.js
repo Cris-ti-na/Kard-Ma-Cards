@@ -10,7 +10,6 @@ class Preview extends React.Component {
           <button type="reset" className="preview__button">
             <i className="far fa-trash-alt"></i>Reset
           </button>
-
           <article className="preview__main">
             <div className="preview__main__name">
               <h2 className="preview__main__name__title">
@@ -63,7 +62,7 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div className="preview__main__icons__item ">
+                  <div className="preview__main__icons__item">
                     <a
                       className="preview__main__icons__item__github"
                       href={"https://github.com/" + this.props.userInfo.github}
