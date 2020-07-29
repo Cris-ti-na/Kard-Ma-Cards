@@ -21,7 +21,11 @@ class Preview extends React.Component {
             <nav>
               <ul className="preview__main__icons">
                 <li className="li-ssmm">
-                  <div className="preview__main__icons__item previewIconBorder1-js">
+                  <div
+                    className={`preview__main__icons__item previewIconBorder1-js ${
+                      this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'
+                    }`}
+                  >
                     <a
                       className="preview__main__icons__item__tel previewTelephone-js"
                       href={'tel:' + this.props.userInfo.phone}
@@ -33,9 +37,13 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div className="preview__main__icons__item previewIconBorder2-js">
+                  <div
+                    className={`preview__main__icons__item previewIconBorder2-js ${
+                      this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'
+                    }`}
+                  >
                     <a
-                      className="preview__main__icons__item__email previewEmail-js"
+                      className="preview__main__icons__item__email previewEmail-js "
                       href={'mailto:' + this.props.userInfo.email}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -45,9 +53,13 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div className="preview__main__icons__item previewIconBorder3-js">
+                  <div
+                    className={`preview__main__icons__item previewIconBorder3-js ${
+                      this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'
+                    }`}
+                  >
                     <a
-                      className="preview__main__icons__item__linkedin previewLinkedIn-js"
+                      className="preview__main__icons__item__linkedin previewLinkedIn-js "
                       href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -57,7 +69,11 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div className="preview__main__icons__item previewIconBorder4-js">
+                  <div
+                    className={`preview__main__icons__item previewIconBorder4-js ${
+                      this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'
+                    }`}
+                  >
                     <a
                       className="preview__main__icons__item__github previewGitHub-js"
                       href={'https://github.com/' + this.props.userInfo.github}
