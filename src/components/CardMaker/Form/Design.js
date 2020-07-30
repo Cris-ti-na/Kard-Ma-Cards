@@ -10,7 +10,6 @@ class Design extends React.Component {
     const inputValue = ev.currentTarget.value;
     const inputId = ev.currentTarget.id;
     this.props.getInformation(inputId, inputValue);
-    console.log(inputId, inputValue);
   }
 
   displayPanel(ev) {
@@ -35,19 +34,43 @@ class Design extends React.Component {
             <h3 className="article__custom__subtitdesign">COLORES</h3>
             <fieldset className="article__custom__colors article__form__noborder">
               <label className="article__custom__cgreen">
-                <input className="palette-js" type="radio" value="1" name="select-color" id="palette" defaultChecked onClick={this.handleColor} />
+                <input
+                  className="palette-js"
+                  type="radio"
+                  value="1"
+                  name="select-color"
+                  id="palette"
+                  onChange={this.handleColor}
+                  checked={this.props.userInfo.palette === 1 ? true : false}
+                />
                 <div className="article__custom__cgreen1"></div>
                 <div className="article__custom__cgreen2"></div>
                 <div className="article__custom__cgreen3"></div>
               </label>
               <label className="article__custom__cred">
-                <input className="palette-js" type="radio" value="2" id="palette" name="select-color" onClick={this.handleColor} />
+                <input
+                  className="palette-js"
+                  type="radio"
+                  value="2"
+                  id="palette"
+                  name="select-color"
+                  onChange={this.handleColor}
+                  checked={this.props.userInfo.palette === 2 ? true : false}
+                />
                 <div className="article__custom__cred4"></div>
                 <div className="article__custom__cred5"></div>
                 <div className="article__custom__cred6"></div>
               </label>
               <label className="article__custom__cmix">
-                <input className="palette-js" type="radio" value="3" id="palette" name="select-color" onClick={this.handleColor} />
+                <input
+                  className="palette-js"
+                  type="radio"
+                  value="3"
+                  id="palette"
+                  name="select-color"
+                  onChange={this.handleColor}
+                  checked={this.props.userInfo.palette === 3 ? true : false}
+                />
                 <div className="article__custom__cmix7"></div>
                 <div className="article__custom__cmix8"></div>
                 <div className="article__custom__cmix9"></div>

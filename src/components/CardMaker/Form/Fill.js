@@ -24,7 +24,7 @@ class Fill extends React.Component {
 
   render() {
     console.log('props en el render del nieto', this.props); //Compruebo que recibe funcion del padre
-    console.log(this.props.activePanel);
+    console.log(this.props);
     return (
       <article className="article__fill">
         {/* --Fill close--> */}
