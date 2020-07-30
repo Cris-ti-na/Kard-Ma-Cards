@@ -9,7 +9,7 @@ class CardMaker extends React.Component {
     super(props);
     this.state = {
       userInfo: {
-        palette: 1, //antes colorSelected
+        palette: '3', //antes colorSelected
         name: '',
         job: '',
         photo: '',

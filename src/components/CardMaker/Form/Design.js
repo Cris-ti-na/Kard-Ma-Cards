@@ -41,7 +41,7 @@ class Design extends React.Component {
                   name="select-color"
                   id="palette"
                   onChange={this.handleColor}
-                  checked={this.props.userInfo.palette === 1 ? true : false}
+                  checked={this.props.userInfo.palette === '1' ? true : false}
                 />
                 <div className="article__custom__cgreen1"></div>
                 <div className="article__custom__cgreen2"></div>
@@ -55,7 +55,7 @@ class Design extends React.Component {
                   id="palette"
                   name="select-color"
                   onChange={this.handleColor}
-                  checked={this.props.userInfo.palette === 2 ? true : false}
+                  checked={this.props.userInfo.palette === '2' ? true : false}
                 />
                 <div className="article__custom__cred4"></div>
                 <div className="article__custom__cred5"></div>
@@ -69,7 +69,7 @@ class Design extends React.Component {
                   id="palette"
                   name="select-color"
                   onChange={this.handleColor}
-                  checked={this.props.userInfo.palette === 3 ? true : false}
+                  checked={this.props.userInfo.palette === '3' ? true : false}
                 />
                 <div className="article__custom__cmix7"></div>
                 <div className="article__custom__cmix8"></div>
