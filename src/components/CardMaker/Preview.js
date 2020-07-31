@@ -2,13 +2,20 @@ import React from 'react';
 import '../../stylesheets/layout/_preview.scss';
 
 class Preview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleResetStyle = this.handleResetStyle.bind(this);
+  }
+  handleResetStyle() {
+    this.props.resetInfo();
+  }
   render() {
     console.log(this.props);
     return (
       <section className={`preview palette${this.props.userInfo.palette}`}>
         <div className="wrapper">
           <fieldset>
-            <button type="reset" className="preview__button">
+            <button type="reset" className="preview__button" onClick={this.handleResetStyle}>
               <i className="far fa-trash-alt"></i>Reset
             </button>
           </fieldset>

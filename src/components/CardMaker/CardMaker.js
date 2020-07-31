@@ -9,19 +9,20 @@ class CardMaker extends React.Component {
     super(props);
     this.state = {
       userInfo: {
-        palette: '3', //antes colorSelected
+        palette: '1',
         name: '',
         job: '',
         photo: '',
         email: '',
-        phone: '', //antes telephone
-        linkedin: '', //antes linkedIn
-        github: '', //antes gitHubZ}
+        phone: '',
+        linkedin: '',
+        github: '',
       },
       activePanel: 'collapse-1',
     };
     this.handleInfo = this.handleInfo.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
@@ -30,6 +31,23 @@ class CardMaker extends React.Component {
         userInfo: {
           ...prevState.userInfo,
           [inputId]: inputValue,
+        },
+      };
+    });
+  }
+
+  handleReset() {
+    this.setState(() => {
+      return {
+        userInfo: {
+          palette: '1',
+          name: '',
+          job: '',
+          photo: '',
+          email: '',
+          phone: '',
+          linkedin: '',
+          github: '',
         },
       };
     });
@@ -51,7 +69,7 @@ class CardMaker extends React.Component {
       <div>
         <Header />
         <main className="main__grid">
-          <Preview userInfo={this.state.userInfo} />
+          <Preview userInfo={this.state.userInfo} resetInfo={this.handleReset} />
           <Form
             userInfo={this.state.userInfo}
             getInformation={this.handleInfo}
