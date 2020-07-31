@@ -9,9 +9,7 @@
     padding-left: 0;
   }
 }
-.article__form__noborder {
-  border: none;
-}
+
 .section__custom {
   font-family: $font-primary;
   font-weight: $font-weight-semibold;
@@ -62,26 +60,25 @@
       display: flex;
       flex-direction: column;
       padding: 0px;
+      border: none;
+      div {
+        width: 30px;
+        height: 25px;
+      }
       .article__custom__cgreen {
         margin-bottom: 28px;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        .article__custom__cgreen1 {
-          width: 30px;
-          height: 25px;
+        &1 {
           margin-left: 10px;
           background-color: $color-primary-dark;
         }
-        .article__custom__cgreen2 {
-          width: 30px;
-          height: 25px;
+        &2 {
           background-color: $color-primary-medium;
         }
-        .article__custom__cgreen3 {
-          width: 30px;
-          height: 25px;
+        &3 {
           background-color: $color-primary-light;
         }
       }
@@ -91,20 +88,14 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        .article__custom__cred4 {
-          width: 30px;
-          height: 25px;
+        &4 {
           margin-left: 10px;
           background-color: $color-red-dark;
         }
-        .article__custom__cred5 {
-          width: 30px;
-          height: 25px;
+        &5 {
           background-color: $color-red-normal;
         }
-        .article__custom__cred6 {
-          width: 30px;
-          height: 25px;
+        &6 {
           background-color: $color-red-light;
         }
       }
@@ -114,20 +105,14 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        .article__custom__cmix7 {
-          width: 30px;
-          height: 25px;
+        &7 {
           margin-left: 10px;
           background-color: $color-mix-dark;
         }
-        .article__custom__cmix8 {
-          width: 30px;
-          height: 25px;
+        &8 {
           background-color: $color-mix-normal;
         }
-        .article__custom__cmix9 {
-          width: 30px;
-          height: 25px;
+        &9 {
           background-color: $color-mix-light;
         }
       }
@@ -304,8 +289,8 @@
       display: flex;
       justify-content: center;
       .child {
-        background-color: #00a0f5;
-        border: 1px solid #00a0f5;
+        background-color: $color-twitter-blue;
+        border: 1px solid $color-twitter-blue;
         border-radius: 3px;
         color: $color-light;
         margin: 10px 0 30px 0;
@@ -330,7 +315,6 @@
 }
 
 // component
-
 .action {
   text-align: center;
 }

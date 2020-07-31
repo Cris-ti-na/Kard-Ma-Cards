@@ -1,5 +1,5 @@
-@import "../core/variables";
-@import "../core/mixins";
+@import '../core/variables';
+@import '../core/mixins';
 
 .preview {
   height: 457px;
@@ -7,11 +7,7 @@
   padding: 38px 40px;
   background-size: 54px;
   background-color: $color-form-placeholder;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url(../../images/logo-cards/logo-kardMA-hand.svg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../../images/logo-cards/logo-kardMA-hand.svg);
   background-repeat: repeat;
 
   &__button {
@@ -165,4 +161,12 @@
     border: 2px solid $color-mix-light;
     color: $color-mix-dark;
   }
+}
+
+.unactiveButton {
+  opacity: 40%;
+}
+
+.activeButton {
+  opacity: 100%;
 }
