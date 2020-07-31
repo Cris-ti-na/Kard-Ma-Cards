@@ -5,29 +5,25 @@ class Preview extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <section className={`preview palette${this.props.userInfo.palette}-js`}>
+      <section className={`preview palette${this.props.userInfo.palette}`}>
         <div className="wrapper">
-          <fieldset className="article__form__noborder">
-            <button type="reset" className="preview__button reset__button-js">
+          <fieldset>
+            <button type="reset" className="preview__button">
               <i className="far fa-trash-alt"></i>Reset
             </button>
           </fieldset>
           <article className="preview__main">
             <div className="preview__main__name">
-              <h2 className="preview__main__name__title previewFullName-js">{this.props.userInfo.name || 'Nombre Apellido'}</h2>
-              <h3 className="preview__main__name__subtitle previewJob-js">{this.props.userInfo.job || 'Front-End Developer'}</h3>
+              <h2 className="preview__main__name__title">{this.props.userInfo.name || 'Nombre Apellido'}</h2>
+              <h3 className="preview__main__name__subtitle">{this.props.userInfo.job || 'Front-End Developer'}</h3>
             </div>
-            <div className="preview__main__photo js__profile-preview"></div>
+            <div className="preview__main__photo"></div>
             <nav>
               <ul className="preview__main__icons">
                 <li className="li-ssmm">
-                  <div
-                    className={`preview__main__icons__item previewIconBorder1-js ${
-                      this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'
-                    }`}
-                  >
+                  <div className={`preview__main__icons__item ${this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
-                      className="preview__main__icons__item__tel previewTelephone-js"
+                      className="preview__main__icons__item__tel"
                       href={'tel:' + this.props.userInfo.phone}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -37,13 +33,9 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div
-                    className={`preview__main__icons__item previewIconBorder2-js ${
-                      this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'
-                    }`}
-                  >
+                  <div className={`preview__main__icons__item ${this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
-                      className="preview__main__icons__item__email previewEmail-js "
+                      className="preview__main__icons__item__email  "
                       href={'mailto:' + this.props.userInfo.email}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -53,13 +45,9 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div
-                    className={`preview__main__icons__item previewIconBorder3-js ${
-                      this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'
-                    }`}
-                  >
+                  <div className={`preview__main__icons__item ${this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
-                      className="preview__main__icons__item__linkedin previewLinkedIn-js "
+                      className="preview__main__icons__item__linkedin"
                       href={'https://linkedin.com/in/' + this.props.userInfo.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -69,13 +57,9 @@ class Preview extends React.Component {
                   </div>
                 </li>
                 <li className="li-ssmm">
-                  <div
-                    className={`preview__main__icons__item previewIconBorder4-js ${
-                      this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'
-                    }`}
-                  >
+                  <div className={`preview__main__icons__item ${this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
-                      className="preview__main__icons__item__github previewGitHub-js"
+                      className="preview__main__icons__item__github"
                       href={'https://github.com/' + this.props.userInfo.github}
                       target="_blank"
                       rel="noopener noreferrer"
