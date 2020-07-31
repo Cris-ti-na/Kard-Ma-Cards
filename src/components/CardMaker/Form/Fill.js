@@ -26,13 +26,13 @@ class Fill extends React.Component {
             <i className="far fa-keyboard"></i> RELLENA
           </h2>
           <div className="form__arrow--fill">
-            <div className="form__arrow--design collapse-item">
+            <div className="form__arrow--design">
               <i className={`fas fa-chevron-down ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
             </div>
           </div>
         </div>
         <div className={`form__open__fill ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
-          <fieldset className="article__fill__form article__form__noborder">
+          <fieldset className="article__fill__form">
             <label htmlFor="fullName">Nombre</label>
             <input id="name" type="text" placeholder="Introduce tu nombre" value={this.props.userInfo.name} onChange={this.handleText} required />
             <label htmlFor="position">Puesto</label>
@@ -40,12 +40,12 @@ class Fill extends React.Component {
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
-                <input type="file" name="" id="photo" className="action__hiddenField js__profile-upload-btn article__fill__button " />
-                <button className="action__upload-btn js__profile-trigger article__fill__addImg" type="button">
+                <input type="file" name="" id="photo" className="action__hiddenField article__fill__button " />
+                <button className="action__upload-btn article__fill__addImg" type="button">
                   Añadir Imagen
                 </button>
-                <div className="profile__preview js__profile-preview article__fill__rectangle">
-                  <div className="profile__image js__profile-image"></div>
+                <div className="profile__preview  article__fill__rectangle">
+                  <div className="profile__image"></div>
                 </div>
               </div>
             </div>
