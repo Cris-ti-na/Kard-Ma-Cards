@@ -10,7 +10,6 @@ class Preview extends React.Component {
     this.props.resetInfo();
   }
   render() {
-    console.log(this.props);
     return (
       <section className={`preview palette${this.props.userInfo.palette}`}>
         <div className="wrapper">
@@ -27,7 +26,7 @@ class Preview extends React.Component {
             <div className="preview__main__photo"></div>
             <nav>
               <ul className="preview__main__icons">
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__tel"
@@ -39,7 +38,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__email  "
@@ -51,7 +50,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__linkedin"
@@ -63,7 +62,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__github"
