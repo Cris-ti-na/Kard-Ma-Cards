@@ -29,7 +29,6 @@ class Design extends React.Component {
             <i className={`arrow-js fas fa-chevron-down  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
-
         <div className={`form__open__design ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
           <div className="article__custom__ccolor">
             <h3 className="article__custom__subtitdesign">COLORES</h3>
