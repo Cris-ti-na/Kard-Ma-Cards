@@ -27,36 +27,20 @@ class Fill extends React.Component {
           </h2>
           <div className="form__arrow--fill">
             <div className="form__arrow--design collapse-item">
-              <i className={`arrow-js fas fa-chevron-down ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
+              <i className={`fas fa-chevron-down ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
             </div>
           </div>
         </div>
         <div className={`form__open__fill ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
           <fieldset className="article__fill__form article__form__noborder">
             <label htmlFor="fullName">Nombre</label>
-            <input
-              className="fullName-js"
-              id="name"
-              type="text"
-              placeholder="Introduce tu nombre"
-              value={this.props.userInfo.name}
-              onChange={this.handleText}
-              required
-            />
+            <input id="name" type="text" placeholder="Introduce tu nombre" value={this.props.userInfo.name} onChange={this.handleText} required />
             <label htmlFor="position">Puesto</label>
-            <input
-              className="job-js"
-              id="job"
-              type="text"
-              placeholder="Front-End Developer"
-              value={this.props.userInfo.job}
-              onChange={this.handleText}
-              required
-            />
+            <input id="job" type="text" placeholder="Front-End Developer" value={this.props.userInfo.job} onChange={this.handleText} required />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
-                <input type="file" name="" id="photo" className="action__hiddenField js__profile-upload-btn article__fill__button addImage-js" />
+                <input type="file" name="" id="photo" className="action__hiddenField js__profile-upload-btn article__fill__button " />
                 <button className="action__upload-btn js__profile-trigger article__fill__addImg" type="button">
                   Añadir Imagen
                 </button>
@@ -67,7 +51,6 @@ class Fill extends React.Component {
             </div>
             <label htmlFor="email">Email</label>
             <input
-              className="email-js"
               id="email"
               type="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -78,7 +61,6 @@ class Fill extends React.Component {
             />
             <label htmlFor="phone">Teléfono</label>
             <input
-              className="telephone-js"
               id="phone"
               type="tel"
               pattern="[0-9]{9}"
@@ -89,7 +71,6 @@ class Fill extends React.Component {
             />
             <label htmlFor="linkedin">Linkedin</label>
             <input
-              className="linkedIn-js"
               id="linkedin"
               type="text"
               placeholder="linkedin.com/in/front-end-developer/"
@@ -99,7 +80,6 @@ class Fill extends React.Component {
             />
             <label htmlFor="github">Github</label>
             <input
-              className="gitHub-js"
               id="github"
               type="text"
               placeholder="https://github.com/adalab"

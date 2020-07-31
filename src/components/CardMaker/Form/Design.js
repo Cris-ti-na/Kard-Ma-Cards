@@ -35,7 +35,6 @@ class Design extends React.Component {
             <fieldset className="article__custom__colors">
               <label className="article__custom__cgreen">
                 <input
-                  className="palette-js"
                   type="radio"
                   value="1"
                   name="select-color"
@@ -50,7 +49,6 @@ class Design extends React.Component {
               </label>
               <label className="article__custom__cred">
                 <input
-                  className="palette-js"
                   type="radio"
                   value="2"
                   id="palette"
@@ -65,7 +63,6 @@ class Design extends React.Component {
               </label>
               <label className="article__custom__cmix">
                 <input
-                  className="palette-js"
                   type="radio"
                   value="3"
                   id="palette"
