@@ -10,10 +10,6 @@ class Fill extends React.Component {
   handleText(ev) {
     const inputValue = ev.currentTarget.value;
     const inputId = ev.currentTarget.id;
-    // console.log('event.currentTarget.value;', event.target.value);
-    // console.log('event.currentTarget.id;', event.target.id);
-
-    console.log('handleText de fill está ejecutandose');
     this.props.getInformation(inputId, inputValue);
   }
 
@@ -23,11 +19,8 @@ class Fill extends React.Component {
   }
 
   render() {
-    console.log('props en el render del nieto', this.props); //Compruebo que recibe funcion del padre
-    console.log(this.props.activePanel);
     return (
       <article className="article__fill">
-        {/* --Fill close--> */}
         <div className="form__closed__fill" id={this.props.id} onClick={this.displayPanel}>
           <h2 className="article__fill__title">
             <i className="far fa-keyboard"></i> RELLENA
@@ -38,13 +31,28 @@ class Fill extends React.Component {
             </div>
           </div>
         </div>
-        {/* --Fill open--> */}
         <div className={`form__open__fill ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
           <fieldset className="article__fill__form article__form__noborder">
             <label htmlFor="fullName">Nombre</label>
-            <input className="fullName-js" id="name" type="text" placeholder="Introduce tu nombre" onChange={this.handleText} required />
+            <input
+              className="fullName-js"
+              id="name"
+              type="text"
+              placeholder="Introduce tu nombre"
+              value={this.props.userInfo.name}
+              onChange={this.handleText}
+              required
+            />
             <label htmlFor="position">Puesto</label>
-            <input className="job-js" id="job" type="text" placeholder="Front-End Developer" onChange={this.handleText} required />
+            <input
+              className="job-js"
+              id="job"
+              type="text"
+              placeholder="Front-End Developer"
+              value={this.props.userInfo.job}
+              onChange={this.handleText}
+              required
+            />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
@@ -61,14 +69,24 @@ class Fill extends React.Component {
             <input
               className="email-js"
               id="email"
-              type="text"
+              type="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               placeholder="karmacards@makeapp.com"
               required
+              value={this.props.userInfo.email}
               onChange={this.handleText}
             />
             <label htmlFor="phone">Teléfono</label>
-            <input className="telephone-js" id="phone" type="text" pattern="[0-9]{9}" placeholder="656 656 656" required onChange={this.handleText} />
+            <input
+              className="telephone-js"
+              id="phone"
+              type="tel"
+              pattern="[0-9]{9}"
+              placeholder="656 656 656"
+              required
+              value={this.props.userInfo.phone}
+              onChange={this.handleText}
+            />
             <label htmlFor="linkedin">Linkedin</label>
             <input
               className="linkedIn-js"
@@ -76,10 +94,19 @@ class Fill extends React.Component {
               type="text"
               placeholder="linkedin.com/in/front-end-developer/"
               required
+              value={this.props.userInfo.linkedin}
               onChange={this.handleText}
             />
             <label htmlFor="github">Github</label>
-            <input className="gitHub-js" id="github" type="text" placeholder="https://github.com/adalab" required onChange={this.handleText} />
+            <input
+              className="gitHub-js"
+              id="github"
+              type="text"
+              placeholder="https://github.com/adalab"
+              required
+              value={this.props.userInfo.github}
+              onChange={this.handleText}
+            />
           </fieldset>
         </div>
       </article>
