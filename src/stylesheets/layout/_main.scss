@@ -1,5 +1,5 @@
-@import "../core/variables";
-@import "../core/mixins";
+@import '../core/variables';
+@import '../core/mixins';
 
 .container {
   background-color: $color-medium-light;
@@ -16,11 +16,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 150px;
+    height: 200px;
     width: 350px;
+
     @include tablet {
       height: 220px;
       width: 450px;
+      margin-top: 280px;
     }
   }
 
@@ -173,7 +175,9 @@
     font-family: $font-primary;
     text-transform: uppercase;
     padding: 10px 20px;
-    margin-bottom: 50px;
+    @include tablet {
+      margin-bottom: 200px;
+    }
 
     &:hover {
       transition: background-color ease 0.5s;
