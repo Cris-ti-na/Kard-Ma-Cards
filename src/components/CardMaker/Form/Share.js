@@ -40,6 +40,7 @@ class Share extends React.Component {
         </div>
       </article>
     );
+  }
 }
 
 export default Share;
