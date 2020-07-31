@@ -76,6 +76,5 @@ class Preview extends React.Component {
     );
   }
 }
-Preview.defaultProps = { userInfo: { name: 'Sonia', job: 'Front End' } };
 
 export default Preview;
