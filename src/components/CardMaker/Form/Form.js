@@ -26,7 +26,12 @@ class Form extends React.Component {
             isAvatarDefault={this.props.isAvatarDefault}
             photo={this.props.userInfo.photo}
           />
-          <Share handleCollapse={this.props.handleCollapse} activePanel={this.props.activePanel} id="collapse-3" />
+          <Share
+            handleCollapse={this.props.handleCollapse}
+            activePanel={this.props.activePanel}
+            id="collapse-3"
+            formCompleted={this.props.formCompleted}
+          />
         </form>
       </section>
     );

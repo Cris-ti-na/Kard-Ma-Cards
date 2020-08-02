@@ -39,7 +39,7 @@
       }
     }
     .form__arrow--design {
-      .fa-chevron-down {
+      .fa-chevron-up {
         margin-top: 27px;
       }
     }
@@ -141,7 +141,7 @@
       }
     }
     .form__arrow--fill {
-      .fa-chevron-down {
+      .fa-chevron-up {
         margin-top: 27px;
       }
     }
@@ -243,7 +243,7 @@
       }
     }
     .form__arrow--share {
-      .fa-chevron-down {
+      .fa-chevron-up {
         margin-top: 27px;
       }
     }
@@ -270,6 +270,11 @@
         border: 1px solid $color-medium-extralight;
         cursor: not-allowed;
       }
+    }
+    .article__share__warning {
+      color: $color-secondary-dark;
+      display: block;
+      padding-bottom: 15px;
     }
   }
   .article__share__create {
@@ -367,4 +372,8 @@
     transform: rotate(180deg);
     color: $color-secondary-dark;
   }
+}
+
+.required__field {
+  color: $color-secondary-dark;
 }

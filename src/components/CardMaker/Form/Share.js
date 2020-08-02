@@ -18,7 +18,7 @@ class Share extends React.Component {
             <i className="fas fa-share-alt"></i> COMPARTE
           </h2>
           <div className="form__arrow--share">
-            <i className={`fas fa-chevron-down ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
+            <i className={`fas fa-chevron-up ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
         {/* --Share open--> */}
@@ -27,6 +27,9 @@ class Share extends React.Component {
             <button className="article__share__button" disabled>
               <i className="far fa-address-card"></i>CREAR TARJETA
             </button>
+            <small className="article__share__warning">
+              {this.props.formCompleted === false ? 'Los campos obligatorios están marcados con *' : ''}
+            </small>
           </div>
           <div className="article__share__create hidden">
             <h3 className="article__share_copy">La tarjeta ha sido creada:</h3>
