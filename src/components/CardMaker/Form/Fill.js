@@ -12,6 +12,8 @@ class Fill extends React.Component {
     this.handleFilePicker = this.handleFilePicker.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
+    this.getPreview = this.getPreview.bind(this);
+
   }
 
   handleText(ev) {
