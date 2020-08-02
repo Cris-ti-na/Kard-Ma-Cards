@@ -26,7 +26,7 @@ class Design extends React.Component {
             <i className="far fa-object-ungroup"></i>DISEÑA
           </h2>
           <div className="form__arrow--design">
-            <i className={`fas fa-chevron-down  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
+            <i className={`fas fa-chevron-up  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
 

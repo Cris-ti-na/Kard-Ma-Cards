@@ -12,8 +12,6 @@ class App extends React.Component {
           <Route exact path="/" component={Landing} />
           <Route path="/cardMaker" component={CardMaker} />
         </Switch>
-        {/* <CardMaker /> */}
-        {/* <Landing /> */}
       </div>
     );
   }

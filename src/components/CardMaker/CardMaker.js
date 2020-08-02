@@ -5,7 +5,6 @@ import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
 
-
 class CardMaker extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +21,7 @@ class CardMaker extends React.Component {
         github: '',
       },
       activePanel: 'collapse-1',
+      formCompleted: false,
     };
     this.initialState = this.state;
 
@@ -29,7 +29,6 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
-
   }
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
@@ -45,20 +44,6 @@ class CardMaker extends React.Component {
 
   handleReset() {
     this.setState(this.initialState);
-    // this.setState(() => {
-    //   return {
-    //     userInfo: {
-    //       palette: '1',
-    //       name: '',
-    //       job: '',
-    //       photo: '',
-    //       email: '',
-    //       phone: '',
-    //       linkedin: '',
-    //       github: '',
-    //     },
-    //   };
-    // });
   }
 
   handleCollapse(targetId) {
@@ -72,29 +57,24 @@ class CardMaker extends React.Component {
   }
   //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
   updateAvatar(img) {
-    const {userInfo} = this.state;
-    this.setState(prevState => {
-      const newProfile = {...userInfo, photo: img};
+    const { userInfo } = this.state;
+    this.setState((prevState) => {
+      const newProfile = { ...userInfo, photo: img };
       return {
         userInfo: newProfile,
-        isAvatarDefault: false
-      }
+        isAvatarDefault: false,
+      };
     });
   }
 
-
   render() {
-    const {userInfo, isAvatarDefault} = this.state;
+    const { userInfo, isAvatarDefault } = this.state;
     console.log(this.state.userInfo);
     return (
       <div>
         <Header />
         <main className="main__grid">
-          <Preview 
-          userInfo={this.state.userInfo}
-          resetInfo={this.handleReset}
-          photo={userInfo.photo}
-          />
+          <Preview userInfo={this.state.userInfo} resetInfo={this.handleReset} photo={userInfo.photo} />
           <Form
             userInfo={this.state.userInfo}
             getInformation={this.handleInfo}
@@ -103,6 +83,7 @@ class CardMaker extends React.Component {
             updateAvatar={this.updateAvatar}
             isAvatarDefault={isAvatarDefault}
             photo={userInfo.photo}
+            formCompleted={this.state.formCompleted}
           />
         </main>
         <Footer />
