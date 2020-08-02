@@ -5,6 +5,13 @@ class Fill extends React.Component {
     super(props);
     this.handleText = this.handleText.bind(this);
     this.displayPanel = this.displayPanel.bind(this);
+  
+    //photo component
+    this.fr = new FileReader();
+    this.myFileField = React.createRef();
+    this.handleFilePicker = this.handleFilePicker.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+    this.getImage = this.getImage.bind(this);
   }
 
   handleText(ev) {
@@ -18,7 +25,29 @@ class Fill extends React.Component {
     this.props.handleCollapse(ev.currentTarget.id);
   }
 
+  handleFilePicker() {
+    this.myFileField.current.click();
+  }
+
+  uploadImage(e){
+    const myFile = e.currentTarget.files[0];
+    this.fr.addEventListener('load', this.getImage);
+    this.fr.readAsDataURL(myFile);
+  }
+
+  getImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
+  getPreview(isDefault, image) {
+    console.log(image, isDefault);
+    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+  }
+
+
   render() {
+    const {isAvatarDefault, photo} = this.props;
     return (
       <article className="article__fill">
         <div className="form__closed__fill" id={this.props.id} onClick={this.displayPanel}>
@@ -40,12 +69,12 @@ class Fill extends React.Component {
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
-                <input type="file" name="" id="photo" className="action__hiddenField article__fill__button " />
-                <button className="action__upload-btn article__fill__addImg" type="button">
+                <input type="file" ref={this.myFileField} name="" id="photo" className="action__hiddenField article__fill__button" onChange={this.uploadImage}/>
+                <button className="action__upload-btn article__fill__addImg" type="button" onClick={this.handleFilePicker}>
                   Añadir Imagen
                 </button>
                 <div className="profile__preview  article__fill__rectangle">
-                  <div className="profile__image"></div>
+                  <div className="profile__image" style={this.getPreview(isAvatarDefault, photo)}></div>
                 </div>
               </div>
             </div>

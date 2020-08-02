@@ -10,6 +10,7 @@ class Preview extends React.Component {
     this.props.resetInfo();
   }
   render() {
+    const {photo} = this.props;
     return (
       <section className={`preview palette${this.props.userInfo.palette}`}>
         <div className="wrapper">
@@ -23,7 +24,7 @@ class Preview extends React.Component {
               <h2 className="preview__main__name__title">{this.props.userInfo.name || 'Nombre Apellido'}</h2>
               <h3 className="preview__main__name__subtitle">{this.props.userInfo.job || 'Front-End Developer'}</h3>
             </div>
-            <div className="preview__main__photo"></div>
+            <div className="preview__main__photo" style={{backgroundImage: `url(${photo})`}}></div>
             <nav>
               <ul className="preview__main__icons">
                 <li>
