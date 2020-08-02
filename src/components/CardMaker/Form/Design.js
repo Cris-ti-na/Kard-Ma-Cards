@@ -9,6 +9,7 @@ class Design extends React.Component {
   handleColor(ev) {
     const inputValue = ev.currentTarget.value;
     const inputId = ev.currentTarget.id;
+
     this.props.getInformation(inputId, inputValue);
   }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../stylesheets/layout/_main.scss';
 
 class Main extends React.Component {
@@ -25,13 +26,11 @@ class Main extends React.Component {
             <p className="articleTitle">3.comparte</p>
           </article>
         </div>
-        <a
-          className="container__btn"
-          href="./profilecards.html"
-          title="go to profile card maker"
-        >
-          comenzar
-        </a>
+        <Link to="/cardMaker">
+          <div className="container__btn" title="go to profile card maker">
+            comenzar
+          </div>
+        </Link>
       </main>
     );
   }

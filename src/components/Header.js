@@ -1,16 +1,17 @@
-import React from "react";
-import "../stylesheets/layout/_header.scss";
-import LogoHand from "../images/logo-cards/logo-kardMA.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../stylesheets/layout/_header.scss';
+import LogoHand from '../images/logo-cards/logo-kardMA.png';
 class Header extends React.Component {
   render() {
     return (
       <header className="header">
         <div className="wrapper">
-          <div className="logo__cards">
-            <a href="./index.html" title="Go to home page">
+          <Link to="/">
+            <div className="logo__cards">
               <img src={LogoHand} alt="Awesome profile-cards logo" />
-            </a>
-          </div>
+            </div>
+          </Link>
         </div>
       </header>
     );
