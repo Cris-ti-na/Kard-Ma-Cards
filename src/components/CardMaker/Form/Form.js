@@ -22,6 +22,9 @@ class Form extends React.Component {
             handleCollapse={this.props.handleCollapse}
             activePanel={this.props.activePanel}
             id="collapse-2"
+            updateAvatar={this.props.updateAvatar}
+            isAvatarDefault={this.props.isAvatarDefault}
+            photo={this.props.userInfo.photo}
           />
           <Share handleCollapse={this.props.handleCollapse} activePanel={this.props.activePanel} id="collapse-3" />
         </form>
