@@ -67,7 +67,7 @@ class CardMaker extends React.Component {
       this.setState({ activePanel: '' });
     }
   }
-  //actualiza la imagen de la tarjeta y recoge que ya no es la iamgen por defecto
+  //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
   updateAvatar(img) {
     const {userInfo} = this.state;
     this.setState(prevState => {
@@ -82,7 +82,7 @@ class CardMaker extends React.Component {
 
   render() {
     const {userInfo, isAvatarDefault} = this.state;
-    //console.log(this.state);
+    console.log(this.state.userInfo);
     return (
       <div>
         <Header />

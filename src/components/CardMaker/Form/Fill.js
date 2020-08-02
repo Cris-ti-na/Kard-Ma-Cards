@@ -41,7 +41,6 @@ class Fill extends React.Component {
   }
 
   getPreview(isDefault, image) {
-    console.log(image, isDefault);
     return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
   }
 
