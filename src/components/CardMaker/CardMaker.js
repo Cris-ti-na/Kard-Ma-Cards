@@ -20,6 +20,8 @@ class CardMaker extends React.Component {
       },
       activePanel: 'collapse-1',
     };
+    this.initialState = this.state;
+
     this.handleInfo = this.handleInfo.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -37,20 +39,21 @@ class CardMaker extends React.Component {
   }
 
   handleReset() {
-    this.setState(() => {
-      return {
-        userInfo: {
-          palette: '1',
-          name: '',
-          job: '',
-          photo: '',
-          email: '',
-          phone: '',
-          linkedin: '',
-          github: '',
-        },
-      };
-    });
+    this.setState(this.initialState);
+    // this.setState(() => {
+    //   return {
+    //     userInfo: {
+    //       palette: '1',
+    //       name: '',
+    //       job: '',
+    //       photo: '',
+    //       email: '',
+    //       phone: '',
+    //       linkedin: '',
+    //       github: '',
+    //     },
+    //   };
+    // });
   }
 
   handleCollapse(targetId) {
