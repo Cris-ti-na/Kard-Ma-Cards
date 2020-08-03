@@ -68,7 +68,7 @@ class Fill extends React.Component {
             <input
               id="name"
               type="text"
-              placeholder="Introduce tu nombre"
+              placeholder="Ej. Bette Calman"
               maxLength="20"
               value={this.props.userInfo.name}
               onChange={this.handleText}
@@ -77,7 +77,7 @@ class Fill extends React.Component {
             <label htmlFor="position">
               Puesto<span className="required__field"> *</span>
             </label>
-            <input id="job" type="text" placeholder="Front-End Developer" value={this.props.userInfo.job} onChange={this.handleText} required />
+            <input id="job" type="text" placeholder="Grandma Karma" value={this.props.userInfo.job} onChange={this.handleText} required />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
@@ -104,7 +104,7 @@ class Fill extends React.Component {
               id="email"
               type="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              placeholder="karmacards@makeapp.com"
+              placeholder="bette@grandmakarma.com"
               required
               value={this.props.userInfo.email}
               onChange={this.handleText}
@@ -123,25 +123,11 @@ class Fill extends React.Component {
             <label htmlFor="linkedin">
               Linkedin<span className="required__field"> *</span>
             </label>
-            <input
-              id="linkedin"
-              type="text"
-              placeholder="linkedin.com/in/front-end-developer/"
-              required
-              value={this.props.userInfo.linkedin}
-              onChange={this.handleText}
-            />
+            <input id="linkedin" type="text" placeholder="grandmaKarma" required value={this.props.userInfo.linkedin} onChange={this.handleText} />
             <label htmlFor="github">
               Github<span className="required__field"> *</span>
             </label>
-            <input
-              id="github"
-              type="text"
-              placeholder="https://github.com/adalab"
-              required
-              value={this.props.userInfo.github}
-              onChange={this.handleText}
-            />
+            <input id="github" type="text" placeholder="grandmaKarma" required value={this.props.userInfo.github} onChange={this.handleText} />
           </fieldset>
         </div>
       </article>
