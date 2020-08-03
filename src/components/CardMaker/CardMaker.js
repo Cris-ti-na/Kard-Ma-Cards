@@ -29,7 +29,25 @@ class CardMaker extends React.Component {
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.validateForm = this.validateForm.bind(this);
   }
+
+  //Valida que estén todos los campos rellenos excepto el teléfono que no es obligatorio
+  validateForm() {
+    let completedValues = 0;
+    Object.entries(this.state.userInfo).forEach(([key, value]) => {
+      if(value !== '' && key !== 'phone') {
+        completedValues = completedValues + 1;
+        console.log(key);
+      }
+    })
+    if(completedValues >= 7) {
+      this.setState({formCompleted: true});
+    }
+    console.log(this.state.formCompleted);
+  }
+
+
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
     this.setState((prevState) => {
@@ -84,6 +102,7 @@ class CardMaker extends React.Component {
             isAvatarDefault={isAvatarDefault}
             photo={userInfo.photo}
             formCompleted={this.state.formCompleted}
+            validateForm={this.validateForm}
           />
         </main>
         <Footer />

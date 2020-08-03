@@ -25,6 +25,7 @@ class Form extends React.Component {
             updateAvatar={this.props.updateAvatar}
             isAvatarDefault={this.props.isAvatarDefault}
             photo={this.props.userInfo.photo}
+            validateForm={this.props.validateForm}
           />
           <Share
             handleCollapse={this.props.handleCollapse}
