@@ -10,6 +10,7 @@ class Share extends React.Component {
     this.props.handleCollapse(ev.currentTarget.id);
   }
   render() {
+    console.log(this.props);
     return (
       <article className="article__share">
         {/* --Share close--> */}
@@ -24,7 +25,7 @@ class Share extends React.Component {
         {/* --Share open--> */}
         <div className={`form__open__share ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
           <div className="article__share__container">
-            <button className="article__share__button" disabled>
+            <button className={`article__share__button ${this.props.formCompleted ? '' : 'disabled'}`}>
               <i className="far fa-address-card"></i>CREAR TARJETA
             </button>
             <small className="article__share__warning">

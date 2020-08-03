@@ -265,11 +265,12 @@
       .fa-address-card {
         margin-right: 9px;
       }
-      &:disabled {
-        background-color: $color-medium-extralight;
-        border: 1px solid $color-medium-extralight;
-        cursor: not-allowed;
-      }
+
+    }
+    .disabled {
+      background-color: $color-medium-extralight;
+      border: 1px solid $color-medium-extralight;
+      cursor: not-allowed;
     }
     .article__share__warning {
       color: $color-secondary-dark;
