@@ -10,7 +10,6 @@ class Share extends React.Component {
     this.props.handleCollapse(ev.currentTarget.id);
   }
   render() {
-    console.log(this.props);
     return (
       <article className="article__share">
         {/* --Share close--> */}

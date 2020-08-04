@@ -4,7 +4,7 @@ import Preview from './Preview';
 import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
-// import get, set from ''
+import ls from '../../services/localStorage.js';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -59,6 +59,15 @@ class CardMaker extends React.Component {
       this.setState({formCompleted: false});
     }
   }
+  componentDidMount() {
+    let localStorage = ls.get('localData', {
+      userInfo: this.state.userInfo});
+    this.setState({userInfo: localStorage.userInfo})
+  }
+
+  componentDidUpdate() {
+    ls.set('localData', {userInfo: this.state.userInfo});
+  }
 
   //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
   updateAvatar(img) {
@@ -71,8 +80,6 @@ class CardMaker extends React.Component {
       };
     });
   }
-  
-
 
   handleReset() {
     this.setState(this.initialState);
@@ -88,11 +95,8 @@ class CardMaker extends React.Component {
     }
   }
 
-
-
   render() {
     const { userInfo, isAvatarDefault } = this.state;
-    console.log(this.state.userInfo);
     return (
       <div>
         <Header />
