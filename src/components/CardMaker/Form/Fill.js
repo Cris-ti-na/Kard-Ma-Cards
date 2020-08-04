@@ -20,7 +20,6 @@ class Fill extends React.Component {
     const inputValue = ev.currentTarget.value;
     const inputId = ev.currentTarget.id;
     this.props.getInformation(inputId, inputValue);
-    this.props.validateForm();
   }
 
 
@@ -49,7 +48,6 @@ class Fill extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { isAvatarDefault, photo } = this.props;
     return (
       <article className="article__fill">

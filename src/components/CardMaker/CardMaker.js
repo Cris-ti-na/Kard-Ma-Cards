@@ -4,6 +4,7 @@ import Preview from './Preview';
 import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
+// import get, set from ''
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -32,22 +33,6 @@ class CardMaker extends React.Component {
     this.validateForm = this.validateForm.bind(this);
   }
 
-  //Valida que estén todos los campos rellenos excepto el teléfono que no es obligatorio
-  validateForm() {
-    let completedValues = 0;
-    Object.entries(this.state.userInfo).forEach(([key, value]) => {
-      if(value !== '' && key !== 'phone') {
-        completedValues = completedValues + 1;
-        console.log(key);
-      }
-    })
-    if(completedValues >= 7) {
-      this.setState({formCompleted: true});
-    }
-    console.log(this.state.formCompleted);
-  }
-
-
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
     this.setState((prevState) => {
@@ -57,8 +42,37 @@ class CardMaker extends React.Component {
           [inputId]: inputValue,
         },
       };
+    }, () => this.validateForm());
+  }
+
+  //Valida que estén todos los campos rellenos excepto el teléfono que no es obligatorio
+  validateForm() {
+    let completedValues = 0;
+    Object.entries(this.state.userInfo).forEach(([key, value]) => {
+      if(value !== '' && key !== 'phone') {
+        completedValues = completedValues + 1;
+      }
+    })
+    if(completedValues === 7) {
+      this.setState({formCompleted: true});
+    } else if(completedValues !== 7){
+      this.setState({formCompleted: false});
+    }
+  }
+
+  //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
+  updateAvatar(img) {
+    const { userInfo } = this.state;
+    this.setState((prevState) => {
+      const newProfile = { ...userInfo, photo: img };
+      return {
+        userInfo: newProfile,
+        isAvatarDefault: false,
+      };
     });
   }
+  
+
 
   handleReset() {
     this.setState(this.initialState);
@@ -73,17 +87,8 @@ class CardMaker extends React.Component {
       this.setState({ activePanel: '' });
     }
   }
-  //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
-  updateAvatar(img) {
-    const { userInfo } = this.state;
-    this.setState((prevState) => {
-      const newProfile = { ...userInfo, photo: img };
-      return {
-        userInfo: newProfile,
-        isAvatarDefault: false,
-      };
-    });
-  }
+
+
 
   render() {
     const { userInfo, isAvatarDefault } = this.state;
