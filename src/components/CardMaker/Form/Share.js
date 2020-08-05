@@ -62,9 +62,9 @@ class Share extends React.Component {
           </div>
           <div className={`article__share__create  ${this.props.cardSuccess === false ? 'hidden' : ''}`}>
             <h3 className="article__share_copy">La tarjeta ha sido creada:</h3>
-            <p className="response link_card">
+            <a className="response link_card" href={this.props.cardURL}>
               {this.props.cardURL}
-            </p>
+            </a>
             <a className="article__twitter__button" target="_blank" href={`https://twitter.com/intent/tweet?text=${tweet}&url=${this.props.cardURL}`} rel="noopener noreferrer">
               <div className="child">
                 <i className="fab fa-twitter"></i> Compartir en Twitter
