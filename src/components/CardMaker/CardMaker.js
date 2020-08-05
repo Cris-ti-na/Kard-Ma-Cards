@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
 import ls from '../../services/localStorage.js';
+import fetchCardData from '../../services/CardService';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -23,50 +24,60 @@ class CardMaker extends React.Component {
       },
       activePanel: 'collapse-1',
       formCompleted: false,
+      cardURL: '',
+      isLoading: false,
+      cardSuccess: '',
     };
     this.initialState = this.state;
-
     this.handleInfo = this.handleInfo.bind(this);
     this.handleCollapse = this.handleCollapse.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.validateForm = this.validateForm.bind(this);
+    this.fetchCardData = this.fetchCardData.bind(this);
+    this.setURL = this.setURL.bind(this);
   }
 
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
   handleInfo(inputId, inputValue) {
-    this.setState((prevState) => {
-      return {
-        userInfo: {
-          ...prevState.userInfo,
-          [inputId]: inputValue,
-        },
-      };
-    }, () => this.validateForm());
+    this.setState(
+      (prevState) => {
+        return {
+          userInfo: {
+            ...prevState.userInfo,
+            [inputId]: inputValue,
+          },
+        };
+      },
+      () => this.validateForm()
+    );
   }
 
   //Valida que estén todos los campos rellenos excepto el teléfono que no es obligatorio
   validateForm() {
     let completedValues = 0;
     Object.entries(this.state.userInfo).forEach(([key, value]) => {
-      if(value !== '' && key !== 'phone') {
+      if (value !== '' && key !== 'phone') {
         completedValues = completedValues + 1;
       }
-    })
-    if(completedValues === 7) {
-      this.setState({formCompleted: true});
-    } else if(completedValues !== 7){
-      this.setState({formCompleted: false});
+    });
+    if (completedValues === 7) {
+      this.setState({ formCompleted: true });
+    } else if (completedValues !== 7) {
+      this.setState({ formCompleted: false });
     }
   }
   componentDidMount() {
     let localStorage = ls.get('localData', {
-      userInfo: this.state.userInfo});
-    this.setState({userInfo: localStorage.userInfo})
+      userInfo: this.state.userInfo,
+    });
+    this.setState({ userInfo: localStorage.userInfo }, () =>
+      this.validateForm()
+    );
   }
 
   componentDidUpdate() {
-    ls.set('localData', {userInfo: this.state.userInfo});
+    ls.set('localData', { userInfo: this.state.userInfo });
   }
 
   //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
@@ -95,13 +106,44 @@ class CardMaker extends React.Component {
     }
   }
 
+  fetchCardData() {
+    const json = JSON.parse(localStorage.getItem('data'));
+    fetchCardData(json)
+      .then((result) => this.setURL(result))
+      .catch((error) => console.log(error));
+
+    this.setState({
+      isLoading: true,
+    });
+  }
+
+  setURL(result) {
+    if (result.success) {
+      this.setState({
+        cardURL: result.cardURL,
+        isLoading: false,
+        cardSuccess: true,
+      });
+    } else {
+      this.setState({
+        cardURL: 'ERROR:' + result.error,
+        isLoading: false,
+      });
+    }
+    console.log(this.state.cardURL);
+  }
+
   render() {
     const { userInfo, isAvatarDefault } = this.state;
     return (
       <div>
         <Header />
         <main className="main__grid">
-          <Preview userInfo={this.state.userInfo} resetInfo={this.handleReset} photo={userInfo.photo} />
+          <Preview
+            userInfo={this.state.userInfo}
+            resetInfo={this.handleReset}
+            photo={userInfo.photo}
+          />
           <Form
             userInfo={this.state.userInfo}
             getInformation={this.handleInfo}
@@ -112,6 +154,10 @@ class CardMaker extends React.Component {
             photo={userInfo.photo}
             formCompleted={this.state.formCompleted}
             validateForm={this.validateForm}
+            cardURL={this.state.cardURL}
+            fetchCardData={this.fetchCardData}
+            cardSuccess={this.state.cardSuccess}
+            isLoading={this.state.isLoading}
           />
         </main>
         <Footer />

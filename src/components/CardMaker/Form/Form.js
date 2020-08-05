@@ -32,6 +32,10 @@ class Form extends React.Component {
             activePanel={this.props.activePanel}
             id="collapse-3"
             formCompleted={this.props.formCompleted}
+            cardURL={this.props.cardURL}
+            fetchCardData={this.props.fetchCardData}
+            cardSuccess={this.props.cardSuccess}
+            isLoading={this.props.isLoading}
           />
         </form>
       </section>
