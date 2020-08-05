@@ -2,25 +2,32 @@ import React from 'react';
 import '../../stylesheets/layout/_preview.scss';
 
 class Preview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleResetStyle = this.handleResetStyle.bind(this);
+  }
+  handleResetStyle() {
+    this.props.resetInfo();
+  }
   render() {
-    console.log(this.props);
+    const { photo } = this.props;
     return (
       <section className={`preview palette${this.props.userInfo.palette}`}>
         <div className="wrapper">
           <fieldset>
-            <button type="reset" className="preview__button">
+            <button type="reset" className="preview__button" onClick={this.handleResetStyle}>
               <i className="far fa-trash-alt"></i>Reset
             </button>
           </fieldset>
           <article className="preview__main">
             <div className="preview__main__name">
-              <h2 className="preview__main__name__title">{this.props.userInfo.name || 'Nombre Apellido'}</h2>
-              <h3 className="preview__main__name__subtitle">{this.props.userInfo.job || 'Front-End Developer'}</h3>
+              <h2 className="preview__main__name__title">{this.props.userInfo.name || 'Bette Calman'}</h2>
+              <h3 className="preview__main__name__subtitle">{this.props.userInfo.job || 'Grandma  Karma'}</h3>
             </div>
-            <div className="preview__main__photo"></div>
+            <div className="preview__main__photo" style={{ backgroundImage: `url(${photo})` }}></div>
             <nav>
               <ul className="preview__main__icons">
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.phone === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__tel"
@@ -32,7 +39,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.email === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__email  "
@@ -44,7 +51,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.linkedin === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__linkedin"
@@ -56,7 +63,7 @@ class Preview extends React.Component {
                     </a>
                   </div>
                 </li>
-                <li className="li-ssmm">
+                <li>
                   <div className={`preview__main__icons__item ${this.props.userInfo.github === '' ? 'unactiveButton' : 'activeButton'}`}>
                     <a
                       className="preview__main__icons__item__github"

@@ -6,7 +6,6 @@ import '../../../stylesheets/layout/_form.scss';
 
 class Form extends React.Component {
   render() {
-    console.log('props que recibo en form', this.props); //Compruebo que recibe funcion del padre
     return (
       <section className="section__custom wrapper__custom">
         <form action="" className="miForm">
@@ -23,8 +22,21 @@ class Form extends React.Component {
             handleCollapse={this.props.handleCollapse}
             activePanel={this.props.activePanel}
             id="collapse-2"
+            updateAvatar={this.props.updateAvatar}
+            isAvatarDefault={this.props.isAvatarDefault}
+            photo={this.props.userInfo.photo}
+            validateForm={this.props.validateForm}
           />
-          <Share handleCollapse={this.props.handleCollapse} activePanel={this.props.activePanel} id="collapse-3" />
+          <Share
+            handleCollapse={this.props.handleCollapse}
+            activePanel={this.props.activePanel}
+            id="collapse-3"
+            formCompleted={this.props.formCompleted}
+            cardURL={this.props.cardURL}
+            fetchCardData={this.props.fetchCardData}
+            cardSuccess={this.props.cardSuccess}
+            isLoading={this.props.isLoading}
+          />
         </form>
       </section>
     );

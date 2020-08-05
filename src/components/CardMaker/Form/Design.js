@@ -9,6 +9,7 @@ class Design extends React.Component {
   handleColor(ev) {
     const inputValue = ev.currentTarget.value;
     const inputId = ev.currentTarget.id;
+
     this.props.getInformation(inputId, inputValue);
   }
 
@@ -25,7 +26,7 @@ class Design extends React.Component {
             <i className="far fa-object-ungroup"></i>DISEÑA
           </h2>
           <div className="form__arrow--design">
-            <i className={`fas fa-chevron-down  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
+            <i className={`fas fa-chevron-up  ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
           </div>
         </div>
         <div className={`form__open__design ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
