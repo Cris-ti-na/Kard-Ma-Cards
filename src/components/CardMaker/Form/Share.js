@@ -55,9 +55,8 @@ class Share extends React.Component {
               <i className="far fa-address-card"></i>CREAR TARJETA
             </button>
             <small className="article__share__warning">
-              {this.props.formCompleted === false
-                ? 'Los campos obligatorios están marcados con *'
-                : ''}
+              {this.props.formCompleted === false  ? 'Los campos obligatorios están marcados con *' : ''}
+              {this.props.isLoading === true ? '⌛ Tu tarjeta se está generando' : ''}
             </small>
           </div>
           <div className={`article__share__create  ${this.props.cardSuccess === false ? 'hidden' : ''}`}>
