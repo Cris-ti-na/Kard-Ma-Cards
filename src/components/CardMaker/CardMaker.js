@@ -5,7 +5,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
 import ls from '../../services/localStorage.js';
-import fetchCardData from '../../services/CardService';
+import {fetchCardData} from '../../services/CardService';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class CardMaker extends React.Component {
       formCompleted: false,
       cardURL: '',
       isLoading: false,
-      cardSuccess: '',
+      cardSuccess: false,
     };
     this.initialState = this.state;
     this.handleInfo = this.handleInfo.bind(this);
@@ -107,11 +107,11 @@ class CardMaker extends React.Component {
   }
 
   fetchCardData() {
-    const json = JSON.parse(localStorage.getItem('data'));
-    fetchCardData(json)
+    const json = JSON.parse(localStorage.getItem('localData'));
+    const object = json.userInfo;
+    fetchCardData(object)
       .then((result) => this.setURL(result))
       .catch((error) => console.log(error));
-
     this.setState({
       isLoading: true,
     });

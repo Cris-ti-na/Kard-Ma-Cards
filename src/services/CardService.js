@@ -10,4 +10,4 @@ const fetchCardData = (json) =>
     },
   }).then((response) => response.json());
 
-export default { fetchCardData };
+export  { fetchCardData };
