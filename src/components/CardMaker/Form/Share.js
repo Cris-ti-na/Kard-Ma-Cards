@@ -20,6 +20,7 @@ class Share extends React.Component {
   }
 
   render() {
+    const tweet = 'Bette Calman te aconseja que mires esta tarjeta, Namaste 🙏'
     return (
       <article className="article__share">
         {/* --Share close--> */}
@@ -64,7 +65,7 @@ class Share extends React.Component {
             <p className="response link_card">
               {this.props.cardURL}
             </p>
-            <a className="article__twitter__button" href="/">
+            <a className="article__twitter__button" target="_blank" href={`https://twitter.com/intent/tweet?text=${tweet}&url=${this.props.cardURL}`} rel="noopener noreferrer">
               <div className="child">
                 <i className="fab fa-twitter"></i> Compartir en Twitter
               </div>
