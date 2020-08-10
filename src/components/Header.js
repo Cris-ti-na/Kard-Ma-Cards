@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/layout/_header.scss';
-import LogoHand from '../images/logo-cards/logo-kardMA.png';
+import LogoHand from '../images/logo_kardma.svg';
 class Header extends React.Component {
   render() {
     return (

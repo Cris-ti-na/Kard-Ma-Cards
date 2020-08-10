@@ -5,9 +5,9 @@
   height: 457px;
   height: 100%;
   padding: 38px 40px;
-  background-size: 54px;
+  background-size: 200px;
   background-color: $color-form-placeholder;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../../images/logo-cards/logo-kardMA-hand.svg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.803), rgba(151, 227, 250, 0.5)), url(../../images/pattern2.png);
   background-repeat: repeat;
 
   &__button {
@@ -70,7 +70,6 @@
       height: 200px;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url(../../images/default-image-flower-fill.svg);
       background-position: center;
     }
 
@@ -113,7 +112,6 @@
   .preview {
     grid-column: 2 / 3;
     grid-row: 1 / 1;
-    background-size: 54px;
     padding: 180px 45px 267px;
     border-radius: 6px;
   }
@@ -164,9 +162,41 @@
 }
 
 .unactiveButton {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .activeButton {
-  opacity: 100%;
+  opacity: 1;
+}
+
+.quoteOn {
+  display: block;
+  text-align: center;
+  background-color: white;
+  font-family: $font-primary;
+}
+
+.quoteOff {
+  display: none;
+}
+
+.grandmaBot {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    max-width: 250px;
+  }
+
+  &__quote {
+    max-width: 300px;
+  }
+
+  @include tablet{
+    flex-direction: row-reverse;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    right: 0;
+  }
 }

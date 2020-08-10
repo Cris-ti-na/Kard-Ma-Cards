@@ -6,6 +6,7 @@ import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
 import ls from '../../services/localStorage.js';
 import {fetchCardData} from '../../services/CardService';
+import grandmaBot from '../../services/grandmaBot';
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class CardMaker extends React.Component {
       cardURL: '',
       isLoading: false,
       cardSuccess: false,
+      grandmaActive: false,
     };
     this.initialState = this.state;
     this.handleInfo = this.handleInfo.bind(this);
@@ -36,6 +38,8 @@ class CardMaker extends React.Component {
     this.validateForm = this.validateForm.bind(this);
     this.fetchCardData = this.fetchCardData.bind(this);
     this.setURL = this.setURL.bind(this);
+    this.handleGrandma = this.handleGrandma.bind(this);
+    this.handleRandomQuote = this.handleRandomQuote.bind(this);
   }
 
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
@@ -106,6 +110,26 @@ class CardMaker extends React.Component {
     }
   }
 
+  handleGrandma() {
+    setTimeout(() => {
+      this.setState({
+        grandmaActive : false,
+      })
+    }, 10000)
+    this.setState({
+      grandmaActive : true,
+    });
+  }
+
+  randomNumber(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  handleRandomQuote() {
+    const number = this.randomNumber(grandmaBot.length);
+    return grandmaBot[number];
+  }
+
   fetchCardData() {
     const json = JSON.parse(localStorage.getItem('localData'));
     const object = json.userInfo;
@@ -143,6 +167,9 @@ class CardMaker extends React.Component {
             userInfo={this.state.userInfo}
             resetInfo={this.handleReset}
             photo={userInfo.photo}
+            grandmaActive={this.state.grandmaActive}
+            handleGrandma={this.handleGrandma}
+            handleRandomQuote={this.handleRandomQuote}
           />
           <Form
             userInfo={this.state.userInfo}

@@ -1,13 +1,24 @@
 import React from 'react';
 import '../../stylesheets/layout/_preview.scss';
+import grandmaGif from '../../images/test-bette-colors.gif';
+import grandmaPng from '../../images/test-bette-colors.png';
 
 class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.handleResetStyle = this.handleResetStyle.bind(this);
+    this.handleGrandmaMove = this.handleGrandmaMove.bind(this);
+    this.handleGrandmaQuote = this.handleGrandmaQuote.bind(this);
   }
   handleResetStyle() {
     this.props.resetInfo();
+  }
+  handleGrandmaMove() {
+    this.props.handleGrandma();
+    this.handleGrandmaQuote();
+  }
+  handleGrandmaQuote() {
+    return this.props.handleRandomQuote();
   }
   render() {
     const { photo } = this.props;
@@ -78,6 +89,11 @@ class Preview extends React.Component {
               </ul>
             </nav>
           </article>
+          <div className="grandmaBot">
+            <img className="grandmaBot__img" src={this.props.grandmaActive ? grandmaGif : grandmaPng} alt='talking' onMouseOver={this.handleGrandmaMove} />
+            <p className={`grandmaBot__quote ${this.props.grandmaActive ? 'quoteOn' : 'quoteOff'}`} >{this.handleGrandmaQuote()}
+            </p>
+          </div>
         </div>
       </section>
     );
