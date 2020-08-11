@@ -134,7 +134,7 @@ class CardMaker extends React.Component {
     if(checked === true) {
       const number1 = this.randomNumber(spiritualName.name.length);
       const number2 = this.randomNumber(spiritualName.surname.length);
-      const newName = spiritualName.name[number1] + spiritualName.surname[number2];
+      const newName = spiritualName.name[number1] + ' ' + spiritualName.surname[number2];
       // this.setState({ userInfo.name: (spiritualName.name[number1] + spiritualName.surname[number2]});
       const { userInfo } = this.state;
       this.setState({ inputName: this.state.userInfo.name});
