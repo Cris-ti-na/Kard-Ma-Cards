@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../stylesheets/layout/_preview.scss';
-import grandmaGif from '../../images/test-bette-colors.gif';
+import grandmaGif from '../../images/test-bette-colors2.gif';
 import grandmaPng from '../../images/test-bette-colors.png';
 
 class Preview extends React.Component {
@@ -90,9 +90,14 @@ class Preview extends React.Component {
             </nav>
           </article>
           <div className="grandmaBot">
-            <img className="grandmaBot__img" src={this.props.grandmaActive ? grandmaGif : grandmaPng} alt='talking' onMouseOver={this.handleGrandmaMove} />
-            <p className={`grandmaBot__quote ${this.props.grandmaActive ? 'quoteOn' : 'quoteOff'}`} >{this.handleGrandmaQuote()}
-            </p>
+            <img
+              className="grandmaBot__img"
+              src={this.props.grandmaActive ? grandmaGif : grandmaPng}
+              alt="talking"
+              onMouseOver={this.handleGrandmaMove}
+              onClick={this.handleGrandmaMove}
+            />
+            <p className={`grandmaBot__quote ${this.props.grandmaActive ? 'quoteOn' : 'quoteOff'}`}>{this.handleGrandmaQuote()}</p>
           </div>
         </div>
       </section>

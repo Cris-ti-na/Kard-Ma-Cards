@@ -265,7 +265,6 @@
       .fa-address-card {
         margin-right: 9px;
       }
-
     }
     .disabled {
       background-color: $color-medium-extralight;
@@ -377,4 +376,16 @@
 
 .required__field {
   color: $color-secondary-dark;
+}
+.chrakra__name {
+  width: 90px;
+  display: block;
+  margin-left: -90px;
+  color: $color-secondary-light;
+  font-size: 12px;
+  text-align: center;
+}
+
+.spiritualName {
+  transform: translate(-50px, -16px);
 }

@@ -14,6 +14,7 @@ class Fill extends React.Component {
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
     this.getPreview = this.getPreview.bind(this);
+    this.handleSpiritual = this.handleSpiritual.bind(this);
   }
 
   handleText(ev) {
@@ -22,6 +23,9 @@ class Fill extends React.Component {
     this.props.getInformation(inputId, inputValue);
   }
 
+  handleSpiritual(ev) {
+    this.props.handleRandomName(ev);
+  }
 
   displayPanel(ev) {
     ev.preventDefault();
@@ -74,11 +78,32 @@ class Fill extends React.Component {
               value={this.props.userInfo.name}
               onChange={this.handleText}
               required
+              disabled={this.props.spiritual ? true : false}
             />
+            <label htmlFor="spiritualName">
+              {' '}
+              Nombre espiritual
+              <input
+                type="checkbox"
+                id="spiritualName"
+                name="spiritualName"
+                className="spiritualName"
+                checked={this.props.spiritual}
+                onChange={this.handleSpiritual}
+              />
+            </label>
             <label htmlFor="position">
               Puesto<span className="required__field"> *</span>
             </label>
-            <input id="job" type="text" placeholder="Grandma Karma" value={this.props.userInfo.job} onChange={this.handleText} required />
+            <input
+              id="job"
+              type="text"
+              placeholder="Grandma Karma"
+              value={this.props.userInfo.job}
+              onChange={this.handleText}
+              required
+              disabled={this.props.spiritual ? true : false}
+            />
             <div className="article__fill__addimg">
               <h3 className="article__fill__titimg">Imagen de perfil</h3>
               <div className="action article__fill__minimg">
