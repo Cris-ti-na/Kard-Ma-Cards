@@ -69,6 +69,7 @@ class CardMaker extends React.Component {
       this.setState({ formCompleted: true });
     } else if (completedValues !== 7) {
       this.setState({ formCompleted: false });
+      this.setState({cardSuccess: false})
     }
   }
   componentDidMount() {
