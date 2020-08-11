@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../stylesheets/layout/_preview.scss';
-import grandmaGif from '../../images/test-bette-colors.gif';
+import grandmaGif from '../../images/test-bette-colors2.gif';
 import grandmaPng from '../../images/test-bette-colors.png';
 
 class Preview extends React.Component {

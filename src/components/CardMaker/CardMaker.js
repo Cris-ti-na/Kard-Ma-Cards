@@ -5,10 +5,9 @@ import Footer from '../Footer';
 import Header from '../Header';
 import defaultImage from './Form/image/defaultImage';
 import ls from '../../services/localStorage.js';
-import {fetchCardData} from '../../services/CardService';
+import { fetchCardData } from '../../services/CardService';
 import grandmaBot from '../../services/grandmaBot';
 import spiritualName from '../../services/spiritualName';
-
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -32,7 +31,8 @@ class CardMaker extends React.Component {
       cardSuccess: false,
       grandmaActive: false,
       spiritual: false,
-      inputname: '',
+      inputName: 'Bette Calman',
+      inputJob: 'Grandma Karma',
     };
     this.initialState = this.state;
     this.handleInfo = this.handleInfo.bind(this);
@@ -79,14 +79,13 @@ class CardMaker extends React.Component {
   componentDidMount() {
     let localStorage = ls.get('localData', {
       userInfo: this.state.userInfo,
+      spiritual: this.state.spiritual,
     });
-    this.setState({ userInfo: localStorage.userInfo }, () =>
-      this.validateForm()
-    );
+    this.setState({ userInfo: localStorage.userInfo, spiritual: localStorage.spiritual }, () => this.validateForm());
   }
 
   componentDidUpdate() {
-    ls.set('localData', { userInfo: this.state.userInfo });
+    ls.set('localData', { userInfo: this.state.userInfo, spiritual: this.state.spiritual });
   }
 
   //actualiza la imagen de la tarjeta y recoge que ya no es la imagen por defecto
@@ -118,40 +117,50 @@ class CardMaker extends React.Component {
   handleGrandma() {
     setTimeout(() => {
       this.setState({
-        grandmaActive : false,
-      })
-    }, 10000)
+        grandmaActive: false,
+      });
+    }, 10000);
     this.setState({
-      grandmaActive : true,
+      grandmaActive: true,
     });
   }
   handleRandomName(ev) {
     const checked = ev.target.checked;
-    this.setState({spiritual: checked}, this.handleCheckedName(checked));
+    this.setState({ spiritual: checked }, this.handleCheckedName(checked));
+  }
+
+  handleSpiritualJob() {
+    if (this.state.userInfo.palette === '1') {
+      return 'Reactjsdha';
+    } else if (this.state.userInfo.palette === '2') {
+      return 'Sassrhara';
+    } else if (this.state.userInfo.palette === '3') {
+      return 'Javascripna';
+    }
   }
 
   handleCheckedName(checked) {
-    if(checked === true) {
+    if (checked === true) {
       const number1 = this.randomNumber(spiritualName.name.length);
       const number2 = this.randomNumber(spiritualName.surname.length);
       const newName = spiritualName.name[number1] + ' ' + spiritualName.surname[number2];
-      // this.setState({ userInfo.name: (spiritualName.name[number1] + spiritualName.surname[number2]});
+      const newJob = this.handleSpiritualJob() + ' Charkra';
       const { userInfo } = this.state;
-      this.setState({ inputName: this.state.userInfo.name});
+      this.setState({ inputName: this.state.userInfo.name, inputJob: this.state.userInfo.job });
       this.setState((prevState) => {
-        const newProfile = { ...userInfo, name: newName};
+        const newProfile = { ...userInfo, name: newName, job: newJob };
         return {
           userInfo: newProfile,
         };
-      })
+      });
     } else {
       const { userInfo } = this.state;
       this.setState((prevState) => {
-        const newProfile = { ...userInfo, name: this.state.inputName};
+        const newProfile = { ...userInfo, name: this.state.inputName, job: this.state.inputJob };
         return {
           userInfo: newProfile,
         };
-      })
+      });
     }
   }
 
@@ -192,6 +201,7 @@ class CardMaker extends React.Component {
   }
 
   render() {
+    console.log(this.state.userInfo);
     const { userInfo, isAvatarDefault } = this.state;
     return (
       <div>
