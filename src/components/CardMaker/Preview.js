@@ -90,9 +90,14 @@ class Preview extends React.Component {
             </nav>
           </article>
           <div className="grandmaBot">
-            <img className="grandmaBot__img" src={this.props.grandmaActive ? grandmaGif : grandmaPng} alt='talking' onMouseOver={this.handleGrandmaMove} />
-            <p className={`grandmaBot__quote ${this.props.grandmaActive ? 'quoteOn' : 'quoteOff'}`} >{this.handleGrandmaQuote()}
-            </p>
+            <img
+              className="grandmaBot__img"
+              src={this.props.grandmaActive ? grandmaGif : grandmaPng}
+              alt="talking"
+              onMouseOver={this.handleGrandmaMove}
+              onClick={this.handleGrandmaMove}
+            />
+            <p className={`grandmaBot__quote ${this.props.grandmaActive ? 'quoteOn' : 'quoteOff'}`}>{this.handleGrandmaQuote()}</p>
           </div>
         </div>
       </section>

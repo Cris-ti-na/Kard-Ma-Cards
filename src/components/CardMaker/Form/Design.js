@@ -46,6 +46,7 @@ class Design extends React.Component {
                 <div className="article__custom__cgreen1"></div>
                 <div className="article__custom__cgreen2"></div>
                 <div className="article__custom__cgreen3"></div>
+                <p className="chrakra__name">REACTJSDHA</p>
               </label>
               <label className="article__custom__cred">
                 <input
@@ -60,6 +61,7 @@ class Design extends React.Component {
                 <div className="article__custom__cred4"></div>
                 <div className="article__custom__cred5"></div>
                 <div className="article__custom__cred6"></div>
+                <p className="chrakra__name">SASSRHARA</p>
               </label>
               <label className="article__custom__cmix">
                 <input
@@ -74,6 +76,7 @@ class Design extends React.Component {
                 <div className="article__custom__cmix7"></div>
                 <div className="article__custom__cmix8"></div>
                 <div className="article__custom__cmix9"></div>
+                <p className="chrakra__name">JAVASCRIPNA</p>
               </label>
             </fieldset>
           </div>
