@@ -7,6 +7,8 @@ import defaultImage from './Form/image/defaultImage';
 import ls from '../../services/localStorage.js';
 import {fetchCardData} from '../../services/CardService';
 import grandmaBot from '../../services/grandmaBot';
+import spiritualName from '../../services/spiritualName';
+
 
 class CardMaker extends React.Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class CardMaker extends React.Component {
       isLoading: false,
       cardSuccess: false,
       grandmaActive: false,
+      spiritual: false,
+      inputname: '',
     };
     this.initialState = this.state;
     this.handleInfo = this.handleInfo.bind(this);
@@ -40,6 +44,7 @@ class CardMaker extends React.Component {
     this.setURL = this.setURL.bind(this);
     this.handleGrandma = this.handleGrandma.bind(this);
     this.handleRandomQuote = this.handleRandomQuote.bind(this);
+    this.handleRandomName = this.handleRandomName.bind(this);
   }
 
   //Modifica el valor de UserInfo con los datos recogidos en el input del formulario
@@ -120,6 +125,35 @@ class CardMaker extends React.Component {
       grandmaActive : true,
     });
   }
+  handleRandomName(ev) {
+    const checked = ev.target.checked;
+    this.setState({spiritual: checked}, this.handleCheckedName(checked));
+  }
+
+  handleCheckedName(checked) {
+    if(checked === true) {
+      const number1 = this.randomNumber(spiritualName.name.length);
+      const number2 = this.randomNumber(spiritualName.surname.length);
+      const newName = spiritualName.name[number1] + spiritualName.surname[number2];
+      // this.setState({ userInfo.name: (spiritualName.name[number1] + spiritualName.surname[number2]});
+      const { userInfo } = this.state;
+      this.setState({ inputName: this.state.userInfo.name});
+      this.setState((prevState) => {
+        const newProfile = { ...userInfo, name: newName};
+        return {
+          userInfo: newProfile,
+        };
+      })
+    } else {
+      const { userInfo } = this.state;
+      this.setState((prevState) => {
+        const newProfile = { ...userInfo, name: this.state.inputName};
+        return {
+          userInfo: newProfile,
+        };
+      })
+    }
+  }
 
   randomNumber(max) {
     return Math.floor(Math.random() * max);
@@ -185,6 +219,8 @@ class CardMaker extends React.Component {
             fetchCardData={this.fetchCardData}
             cardSuccess={this.state.cardSuccess}
             isLoading={this.state.isLoading}
+            spiritual={this.state.spiritual}
+            handleRandomName={this.handleRandomName}
           />
         </main>
         <Footer />

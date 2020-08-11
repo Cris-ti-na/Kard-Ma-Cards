@@ -26,6 +26,8 @@ class Form extends React.Component {
             isAvatarDefault={this.props.isAvatarDefault}
             photo={this.props.userInfo.photo}
             validateForm={this.props.validateForm}
+            spiritual={this.props.spiritual}
+            handleRandomName={this.props.handleRandomName}
           />
           <Share
             handleCollapse={this.props.handleCollapse}
