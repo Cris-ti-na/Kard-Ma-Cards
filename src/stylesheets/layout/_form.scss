@@ -388,5 +388,11 @@
 }
 
 .spiritualName {
-  transform: translate(-60px, -16px);
+  transform: translate(0, -16px);
+  @include tablet {
+    transform: translate(-30px, -16px);
+  }
+  @include desktop {
+    transform: translate(-60px, -16px);
+  }
 }
