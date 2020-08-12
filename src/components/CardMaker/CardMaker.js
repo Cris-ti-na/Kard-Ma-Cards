@@ -198,11 +198,9 @@ class CardMaker extends React.Component {
         isLoading: false,
       });
     }
-    console.log(this.state.cardURL);
   }
 
   render() {
-    console.log(this.state.userInfo);
     const { userInfo, isAvatarDefault } = this.state;
     return (
       <div>
