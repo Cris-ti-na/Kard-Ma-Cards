@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Fill extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class Fill extends React.Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
+    this.fr.addEventListener("load", this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
@@ -55,17 +55,29 @@ class Fill extends React.Component {
     const { isAvatarDefault, photo } = this.props;
     return (
       <article className="article__fill">
-        <div className="form__closed__fill" id={this.props.id} onClick={this.displayPanel}>
+        <div
+          className="form__closed__fill"
+          id={this.props.id}
+          onClick={this.displayPanel}
+        >
           <h2 className="article__fill__title">
             <i className="far fa-keyboard"></i> RELLENA
           </h2>
           <div className="form__arrow--fill">
             <div className="form__arrow--design">
-              <i className={`fas fa-chevron-up ${this.props.activePanel === this.props.id ? 'open' : 'close'}`}></i>
+              <i
+                className={`fas fa-chevron-up ${
+                  this.props.activePanel === this.props.id ? "open" : "close"
+                }`}
+              ></i>
             </div>
           </div>
         </div>
-        <div className={`form__open__fill ${this.props.activePanel === this.props.id ? 'active' : 'hidden'}`}>
+        <div
+          className={`form__open__fill ${
+            this.props.activePanel === this.props.id ? "active" : "hidden"
+          }`}
+        >
           <fieldset className="article__fill__form">
             <label htmlFor="fullName">
               Nombre<span className="required__field"> *</span>
@@ -81,7 +93,7 @@ class Fill extends React.Component {
               disabled={this.props.spiritual ? true : false}
             />
             <label htmlFor="spiritualName">
-              {' '}
+              {" "}
               Nombre espiritual
               <input
                 type="checkbox"
@@ -115,11 +127,18 @@ class Fill extends React.Component {
                   className="action__hiddenField article__fill__button"
                   onChange={this.uploadImage}
                 />
-                <button className="action__upload-btn article__fill__addImg" type="button" onClick={this.handleFilePicker}>
+                <button
+                  className="action__upload-btn article__fill__addImg"
+                  type="button"
+                  onClick={this.handleFilePicker}
+                >
                   Añadir Imagen
                 </button>
                 <div className="profile__preview  article__fill__rectangle">
-                  <div className="profile__image" style={this.getPreview(isAvatarDefault, photo)}></div>
+                  <div
+                    className="profile__image"
+                    style={this.getPreview(isAvatarDefault, photo)}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -149,11 +168,25 @@ class Fill extends React.Component {
             <label htmlFor="linkedin">
               Linkedin<span className="required__field"> *</span>
             </label>
-            <input id="linkedin" type="text" placeholder="grandmaKarma" required value={this.props.userInfo.linkedin} onChange={this.handleText} />
+            <input
+              id="linkedin"
+              type="text"
+              placeholder="grandmaKarma"
+              required
+              value={this.props.userInfo.linkedin}
+              onChange={this.handleText}
+            />
             <label htmlFor="github">
               Github<span className="required__field"> *</span>
             </label>
-            <input id="github" type="text" placeholder="grandmaKarma" required value={this.props.userInfo.github} onChange={this.handleText} />
+            <input
+              id="github"
+              type="text"
+              placeholder="grandmaKarma"
+              required
+              value={this.props.userInfo.github}
+              onChange={this.handleText}
+            />
           </fieldset>
         </div>
       </article>

@@ -1,5 +1,5 @@
-@import '../core/variables';
-@import '../core/mixins';
+@import "../core/variables";
+@import "../core/mixins";
 
 //COMUN
 .wrapper__custom {
@@ -161,6 +161,7 @@
       display: block;
       border: 1px solid $color-primary-light;
       margin-bottom: 20px;
+
       width: 100%;
       font-size: 14px;
       line-height: 20px;
@@ -202,7 +203,7 @@
           margin-bottom: 20px;
           box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
         }
-        input[type='file'] {
+        input[type="file"] {
           position: absolute;
           top: 0;
           left: 10px;
@@ -387,5 +388,5 @@
 }
 
 .spiritualName {
-  transform: translate(-50px, -16px);
+  transform: translate(-60px, -16px);
 }
