@@ -1,5 +1,5 @@
-@import '../core/variables';
-@import '../core/mixins';
+@import "../core/variables";
+@import "../core/mixins";
 
 .preview {
   height: 457px;
@@ -7,7 +7,11 @@
   padding: 38px 40px;
   background-size: 200px;
   background-color: $color-form-placeholder;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.803), rgba(151, 227, 250, 0.5)), url(../../images/pattern2.png);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.803),
+      rgba(151, 227, 250, 0.5)
+    ),
+    url(../../images/pattern2.png);
   background-repeat: repeat;
 
   &__button {
@@ -172,8 +176,11 @@
 .quoteOn {
   display: block;
   text-align: center;
-  background-color: white;
-  font-family: $font-primary;
+  color: #114e4e;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
 }
 
 .quoteOff {
@@ -183,6 +190,7 @@
 .grandmaBot {
   display: flex;
   flex-direction: column;
+  font-family: $font-terciary;
 
   &__img {
     max-width: 250px;
@@ -192,7 +200,7 @@
     max-width: 300px;
   }
 
-  @include tablet{
+  @include tablet {
     flex-direction: row-reverse;
     position: absolute;
     align-items: center;
