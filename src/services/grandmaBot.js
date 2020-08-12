@@ -14,6 +14,7 @@ const grandmaBot = [
   `"A código compilado no le mires los warnings" (Frontend Anónimo)`,
   `"Programo ergo sum" (René Descartes)`,
   `"La libertad se extiende solo hasta los límites de Sudo" (Carl Gustav Jung)`,
+  '"En local me funciona" (Barack Obama)'
 ];
 
 export default grandmaBot;
